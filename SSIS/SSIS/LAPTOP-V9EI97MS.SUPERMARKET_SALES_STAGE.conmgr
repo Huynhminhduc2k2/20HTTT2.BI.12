@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-V9EI97MS.SUPERMARKET_SALES_STAGE"
+  DTS:DTSID="{0ECEE000-ADD2-4CB1-9991-5E0DE3FF4CA5}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-V9EI97MS;Initial Catalog=SUPERMARKET_SALES_STAGE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SSIS-{0ECEE000-ADD2-4CB1-9991-5E0DE3FF4CA5}LAPTOP-V9EI97MS.SUPERMARKET_SALES_STAGE;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

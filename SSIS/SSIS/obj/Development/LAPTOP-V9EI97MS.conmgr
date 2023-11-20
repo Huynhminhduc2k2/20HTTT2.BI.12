@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-V9EI97MS"
+  DTS:DTSID="{A26E9AEA-83EE-4B83-809C-09CB60B04500}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-V9EI97MS;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SSIS-{A26E9AEA-83EE-4B83-809C-09CB60B04500}LAPTOP-V9EI97MS;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

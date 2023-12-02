@@ -5,7 +5,7 @@
 - Thêm createdDate và updatedDate cho tất cả các bảng của file excel "supermarket_sales.xls"
 ### SOURCE - STAGE
 #### Bước 1 (Tạo DBs):
-- Tạo 2 database "supermarket_sales_STAGE" và "supermarket_sales_METADB"
+- Tạo 2 database "STAGE" và "METADB"
   + METADB có bảng như sau:
 -     --Tạo bảng dataflow trong metadb
       CREATE TABLE DATA_FLOW
@@ -35,16 +35,16 @@
       VALUES ('supermarket_sales_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00')
     
 #### Bước 2 (Nạp SOURCE vào STAGE):
-- Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: SUPERMARKET_SALES_STAGE)
+- Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: STAGE)
 - Chỉnh connection trong DATA FLOW và mapping các bảng
 - Chạy package "SOURCE-STAGE"
 
 ### STAGE - NDS
 #### Bước 1 (Tạo DB NDS):
-- Tạo database "supermarket_sales_NDS" có các bảng và khóa
+- Tạo database "NDS" có các bảng và khóa
 - ...
 
 #### Bước 2 (Nạp STAGE vào NDS - Normalize Data Store):
-- Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: SUPERMARKET_SALES_NDS)
+- Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: NDS)
 - Chỉnh connection trong DATA FLOW và mapping các bảng
 - Chạy package "STAGE-NDS"

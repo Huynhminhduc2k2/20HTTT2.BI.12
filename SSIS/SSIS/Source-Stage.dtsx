@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SOURCE-STAGE"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{01CACA75-E9D8-4C36-A654-BC631D4147C0}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{02596D74-6ED9-4799-B1F9-56421B13354D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\BI\supermarket_sales.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\BI\20HTTT2.BI.12\supermarket_sales.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -86,6 +86,1030 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Push city_SOURCE into STAGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b633f309-2e48-4d1e-9d47-f8d8f13a6fd4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Push city_SOURCE into STAGE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Push city_SOURCE into STAGE\city"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="city"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">supermarket_sales$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [city$]
+WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping">"Parameter0:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter1:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};"Parameter2:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter3:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push city_SOURCE into STAGE\city.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[Branch]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[Branch]"
+                      length="255"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[Branch]"
+                      name="Branch"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[createdDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[updatedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[City]"
+                      length="255"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[Branch]"
+                      dataType="wstr"
+                      length="255"
+                      name="Branch" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      dataType="date"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      dataType="date"
+                      name="updatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[Branch]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[Branch]"
+                      name="Branch" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      dataType="date"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      dataType="date"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      name="updatedDate" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Push city_SOURCE into STAGE\city_STAGE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="city_STAGE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[city_STAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push city_SOURCE into STAGE\city_STAGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].Columns[Branch]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Branch"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[Branch]" />
+                    <inputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      cachedDataType="date"
+                      cachedName="createdDate"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="date"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[updatedDate]" />
+                    <inputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      dataType="wstr"
+                      length="255"
+                      name="Branch" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Push city_SOURCE into STAGE\city_STAGE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push city_SOURCE into STAGE\city_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push city_SOURCE into STAGE\city_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push city_SOURCE into STAGE\city_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Push city_SOURCE into STAGE.Paths[Excel Source Output]"
+              endId="Package\Push city_SOURCE into STAGE\city_STAGE.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Push city_SOURCE into STAGE\city.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Push product_line_SOURCE into STAGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{e9447965-c30c-46d0-b661-7615aed94740}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Push product_line_SOURCE into STAGE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Push product_line_SOURCE into STAGE\product_line"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="product_line"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [ProductLine$]
+WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping">"Parameter0:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter1:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};"Parameter2:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter3:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[Product line]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[Product line]"
+                      length="255"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[Product line]"
+                      name="Product line"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[ProductLineID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[ProductLineID]"
+                      length="255"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[ProductLineID]"
+                      name="ProductLineID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[createdDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[updatedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product line" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLineID" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      dataType="date"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      dataType="date"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[Product line]"
+                      name="Product line" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ProductLineID]"
+                      name="ProductLineID" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      dataType="date"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      dataType="date"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      name="updatedDate" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="product_line_STAGE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[product_line_STAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].Columns[Product line]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Product line"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[Product line]" />
+                    <inputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].Columns[ProductLineID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductLineID"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[ProductLineID]" />
+                    <inputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      cachedDataType="date"
+                      cachedName="createdDate"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="date"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output].Columns[updatedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product line" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLineID" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Push product_line_SOURCE into STAGE.Paths[Excel Source Output]"
+              endId="Package\Push product_line_SOURCE into STAGE\product_line_STAGE.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Push product_line_SOURCE into STAGE\product_line.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Push product_SOURCE into STAGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{20d0cfe9-4f25-4c62-a9ac-a777ead17f80}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Push product_SOURCE into STAGE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Push product_SOURCE into STAGE\product"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="product"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">product$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [product$]
+WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping">"Parameter0:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter1:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};"Parameter2:Input",{B81E047B-FFFC-4A0F-AEB8-A358578BC631};"Parameter3:Input",{2A6D2632-0AB2-489F-96CC-A48F0D843ACC};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push product_SOURCE into STAGE\product.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                      length="255"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[Unit price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[Unit price]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[Unit price]"
+                      name="Unit price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductLine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[ProductLine]"
+                      length="255"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductLine]"
+                      name="ProductLine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[createdDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[updatedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[Unit price]"
+                      dataType="r8"
+                      name="Unit price" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[ProductLine]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLine" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[createdDate]"
+                      dataType="date"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].ExternalColumns[updatedDate]"
+                      dataType="date"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[Unit price]"
+                      dataType="r8"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[Unit price]"
+                      name="Unit price" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ProductLine]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ProductLine]"
+                      name="ProductLine" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      dataType="date"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      dataType="date"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[updatedDate]"
+                      name="updatedDate" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Push product_SOURCE into STAGE\product_STAGE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="product_STAGE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[product_STAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Push product_SOURCE into STAGE\product_STAGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].Columns[Unit price]"
+                      cachedDataType="r8"
+                      cachedName="Unit price"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Unit price]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[Unit price]" />
+                    <inputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].Columns[ProductLine]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductLine"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[ProductLine]" />
+                    <inputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      cachedDataType="date"
+                      cachedName="createdDate"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="date"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output].Columns[updatedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[Unit price]"
+                      dataType="r8"
+                      name="Unit price" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLine" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Push product_SOURCE into STAGE\product_STAGE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Push product_SOURCE into STAGE\product_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Push product_SOURCE into STAGE\product_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Push product_SOURCE into STAGE\product_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Push product_SOURCE into STAGE.Paths[Excel Source Output]"
+              endId="Package\Push product_SOURCE into STAGE\product_STAGE.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Push product_SOURCE into STAGE\product.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Push supermarket_sales_SOURCE into STAGE"
       DTS:CreationName="Microsoft.Pipeline"
@@ -803,6 +1827,81 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Select LSET, CET of city_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7f19fd3f-7ae2-4750-a806-03858517e1d7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Select LSET, CET of city_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="SELECT LSET, CET FROM DATA_FLOW WHERE NAME =  'city_STAGE'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Select LSET, CET of product_line_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b8a83f98-8aa2-4fdd-a9e2-045670357420}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Select LSET, CET of product_line_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="SELECT LSET, CET FROM DATA_FLOW WHERE NAME = 'product_line_STAGE'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Select LSET, CET of product_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{52c4baa3-b03e-4e06-96b9-3cb117847fc5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Select LSET, CET of product_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="SELECT LSET, CET FROM DATA_FLOW WHERE NAME =  'product_STAGE'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Select LSET, CET of supermarket_sales_STAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -811,7 +1910,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Select LSET, CET of supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -828,6 +1927,57 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Set CET for city_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{aae6de07-9a53-4dec-ad66-b2e7b9cda0d3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for city_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET CET = GETDATE() WHERE NAME = 'city_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET for product_line_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d2bf8f45-ae8c-41a4-a345-cc2804a85903}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for product_line_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET CET = GETDATE() WHERE NAME = 'product_line_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET for product_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c5c74b31-23ec-4004-8f2b-0bd316e41633}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for product_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET CET = GETDATE() WHERE NAME = 'product_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Set CET for supermarket_sales_STAGE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -836,12 +1986,63 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
           SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET CET = GETDATE() WHERE NAME = 'supermarket_sales_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for city_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4f11b063-2771-4b3a-9c93-e070ea628f09}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for city_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET LSET = GETDATE() WHERE NAME =  'city_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for product_line_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3058ea04-61f8-4a04-bef9-45793af8076d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for product_line_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET LSET = GETDATE() WHERE NAME = 'product_line_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for product_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7532457b-18c6-42a1-98c6-ae0b124a9e67}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for product_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET LSET = GETDATE() WHERE NAME =  'product_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -853,12 +2054,63 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C7DC54C4-68FD-48F6-8878-6C1E0A9A55AB}"
           SQLTask:SqlStatementSource="UPDATE DATA_FLOW SET LSET = GETDATE() WHERE NAME = 'supermarket_sales_STAGE'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table city_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{33cc04fb-12a4-479b-8937-b34af38eb194}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table city_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EF60DDF1-567C-4728-8D32-931DE5603272}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE city_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table product_line_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7f989399-bf2e-4126-9339-cc9738426dda}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table product_line_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EF60DDF1-567C-4728-8D32-931DE5603272}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE product_line_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table product_STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{26650266-3d50-4830-a9d4-a2cb605d967c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table product_STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EF60DDF1-567C-4728-8D32-931DE5603272}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE product_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -870,7 +2122,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -897,6 +2149,30 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Select LSET, CET of supermarket_sales_STAGE" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2aa47d04-3bb6-4fe8-9bb9-046c50ccf6a0}"
+      DTS:From="Package\Truncate table product_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1"
+      DTS:To="Package\Select LSET, CET of product_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{901398d8-5952-47dd-8ff3-fbdbd1323dfe}"
+      DTS:From="Package\Truncate table product_line_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 2"
+      DTS:To="Package\Select LSET, CET of product_line_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{70790d2f-5dbf-4f86-a7ac-a2b3f365aec3}"
+      DTS:From="Package\Truncate table city_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 3"
+      DTS:To="Package\Select LSET, CET of city_STAGE" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{67097308-A4B1-4F0B-B654-C8D8D2A5E1D4}"
@@ -905,6 +2181,30 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Push supermarket_sales_SOURCE into STAGE" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{88ae68b2-508b-4fed-8109-2ac39eb7c84a}"
+      DTS:From="Package\Select LSET, CET of product_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 1"
+      DTS:To="Package\Push product_SOURCE into STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{51d6399a-195d-445f-90fb-8b4fc0f80c81}"
+      DTS:From="Package\Select LSET, CET of product_line_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 2"
+      DTS:To="Package\Push product_line_SOURCE into STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{31ff21df-45cb-48a4-b88d-e56e951c3127}"
+      DTS:From="Package\Select LSET, CET of city_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 3"
+      DTS:To="Package\Push city_SOURCE into STAGE" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{B22C0182-D749-483A-A476-81F51FB1B768}"
@@ -912,6 +2212,54 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Set LSET for supermarket_sales_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{95f068aa-c9cd-4b10-a167-37ac202ab8c4}"
+      DTS:From="Package\Push product_SOURCE into STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 1"
+      DTS:To="Package\Set LSET for product_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{877d67f0-3b5f-4e04-a63a-750607f15607}"
+      DTS:From="Package\Push product_line_SOURCE into STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 2"
+      DTS:To="Package\Set LSET for product_line_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{01f444df-2ec7-4ea5-bf8a-b60c10ceb214}"
+      DTS:From="Package\Push city_SOURCE into STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 3"
+      DTS:To="Package\Set LSET for city_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{dfbc179b-ecf5-4096-8583-7d4da973684d}"
+      DTS:From="Package\Set CET for product_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Truncate table product_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{11d0957c-a1bb-4981-bb3f-b7aa781ff5cd}"
+      DTS:From="Package\Set CET for product_line_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Truncate table product_line_STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{d38e5ec6-d84e-4718-a2d3-c2debe4e17a1}"
+      DTS:From="Package\Set CET for city_STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Truncate table city_STAGE" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -924,30 +2272,27 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="275.2,41.6"
-          Id="Package\Truncate table supermarket_sales_STAGE"
-          TopLeft="486.42857246405,161.352941035039" />
-        <NodeLayout
-          Size="265.6,41.6"
-          Id="Package\Set LSET for supermarket_sales_STAGE"
-          TopLeft="499.285715348563,383.499999663848" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="293.6,41.6"
           Id="Package\Push supermarket_sales_SOURCE into STAGE"
           TopLeft="481.507143499186,313.867646925267" />
         <NodeLayout
+          Size="300,41.6"
+          Id="Package\Select LSET, CET of supermarket_sales_STAGE"
+          TopLeft="472.857143863732,240.435293958787" />
+        <NodeLayout
           Size="260.8,41.6"
           Id="Package\Set CET for supermarket_sales_STAGE"
           TopLeft="491.428572474695,80.2941175766779" />
-        <AnnotationLayout
-          Text="Cập nhật lại CET trong METADB cho supermarket_sales_STAGE"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="356.8,60"
-          Id="7b61acc8-01f8-478d-85af-8aa555909e65"
-          TopLeft="797.448981289397,81.9378150738632" />
+        <NodeLayout
+          Size="265.6,41.6"
+          Id="Package\Set LSET for supermarket_sales_STAGE"
+          TopLeft="499.285715348563,383.499999663848" />
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\Truncate table supermarket_sales_STAGE"
+          TopLeft="486.42857246405,161.352941035039" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="622.928572469372,121.894117576678">
@@ -970,17 +2315,6 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="Xóa dữ liệu cũ trong supermarket_sales_STAGE"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="275.2,40"
-          Id="72ae4b63-3ceb-4093-959a-df1e657f280b"
-          TopLeft="802.653062933128,159.608403310499" />
-        <NodeLayout
-          Size="300,41.6"
-          Id="Package\Select LSET, CET of supermarket_sales_STAGE"
-          TopLeft="472.857143863732,240.435293958787" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="623.442858163891,202.952941035039">
@@ -1003,13 +2337,6 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="Lấy LSET và CET từ METADB để truyền vào dataflow -&gt; kiếm các dữ liệu chưa có hoặc mới cập nhật của SOURCE"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="340.8,60"
-          Id="37291feb-8b87-4e71-9418-b88abb8b19fb"
-          TopLeft="792.000001532691,231.040335983829" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="625.582143681459,282.035293958787">
@@ -1055,19 +2382,364 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
+          Text="Cập nhật lại CET trong METADB cho supermarket_sales_STAGE"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="356.8,40"
+          Id="7b61acc8-01f8-478d-85af-8aa555909e65"
+          TopLeft="93.8775512202493,83.2123248766676" />
+        <AnnotationLayout
+          Text="Xóa dữ liệu cũ trong supermarket_sales_STAGE"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="275.2,40"
+          Id="72ae4b63-3ceb-4093-959a-df1e657f280b"
+          TopLeft="99.0816328639803,160.882913113303" />
+        <AnnotationLayout
+          Text="Lấy LSET và CET từ METADB để truyền vào dataflow -&gt; kiếm các dữ liệu chưa có hoặc mới cập nhật của SOURCE"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="340.8,56"
+          Id="37291feb-8b87-4e71-9418-b88abb8b19fb"
+          TopLeft="88.4285714635434,232.314845786633" />
+        <AnnotationLayout
           Text="Cập nhật lại LSET trong METADB cho supermarket_sales_STAGE"
           ParentId="Package"
           FontInfo="{assembly:Null}"
           Size="361.6,40"
           Id="095f08e2-4a33-417c-995b-c34d189db3ee"
-          TopLeft="797.346940472853,382.410924123607" />
+          TopLeft="93.7755104037054,383.685433926411" />
         <AnnotationLayout
           Text="Đẩy dữ liệu từ excel SOURCE vào STAGE"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="239.2,60"
+          Size="239.2,40"
           Id="b48843dd-1143-45ed-b546-a6b75ce288f4"
-          TopLeft="838.775511989615,312.436974516053" />
+          TopLeft="135.204081920467,313.711484318857" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\Push product_SOURCE into STAGE"
+          TopLeft="843.75714313464,313.867646925267" />
+        <NodeLayout
+          Size="248,41.6"
+          Id="Package\Select LSET, CET of product_STAGE"
+          TopLeft="835.107143499186,240.435293958787" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\Set CET for product_STAGE"
+          TopLeft="853.678572110149,80.2941175766779" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Set LSET for product_STAGE"
+          TopLeft="861.535714984017,383.499999663848" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Truncate table product_STAGE"
+          TopLeft="848.678572099504,161.352941035039" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="959.178572104826,121.894117576678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583611"
+              Start="0,0"
+              End="0,31.9588234583611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="959.692857799345,202.952941035039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.4823529237479"
+              Start="0,0"
+              End="0,29.9823529237479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9823529237479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 1]"
+          TopLeft="961.832143316913,282.035293958787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.83235296648"
+              Start="0,0"
+              End="0,24.33235296648">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.33235296648" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 1]"
+          TopLeft="966.446429059328,355.467646925267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.032352738581"
+              Start="0,0"
+              End="0,20.532352738581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.532352738581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="264,41.6"
+          Id="Package\Push product_line_SOURCE into STAGE"
+          TopLeft="1206.00714277009,313.867646925267" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Select LSET, CET of product_line_STAGE"
+          TopLeft="1197.35714313464,240.435293958787" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Set CET for product_line_STAGE"
+          TopLeft="1215.9285717456,80.2941175766779" />
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\Set LSET for product_line_STAGE"
+          TopLeft="1223.78571461947,383.499999663848" />
+        <NodeLayout
+          Size="245.6,41.6"
+          Id="Package\Truncate table product_line_STAGE"
+          TopLeft="1210.92857173496,161.352941035039" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1332.42857174028,121.894117576678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583611"
+              Start="0,0"
+              End="0,31.9588234583611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 2]"
+          TopLeft="1332.9428574348,202.952941035039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.4823529237479"
+              Start="0,0"
+              End="0,29.9823529237479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9823529237479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 2]"
+          TopLeft="1335.08214295237,282.035293958787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.83235296648"
+              Start="0,0"
+              End="0,24.33235296648">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.33235296648" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 2]"
+          TopLeft="1339.89642869478,355.467646925267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.032352738581"
+              Start="0,0"
+              End="0,20.532352738581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.532352738581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Push city_SOURCE into STAGE"
+          TopLeft="1568.25714240555,313.867646925267" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Select LSET, CET of city_STAGE"
+          TopLeft="1559.60714277009,240.435293958787" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Set CET for city_STAGE"
+          TopLeft="1578.17857138106,80.2941175766779" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Set LSET for city_STAGE"
+          TopLeft="1586.03571425492,383.499999663848" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Truncate table city_STAGE"
+          TopLeft="1573.17857137041,161.352941035039" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1673.67857137573,121.894117576678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583611"
+              Start="0,0"
+              End="0,31.9588234583611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 3]"
+          TopLeft="1674.19285707025,202.952941035039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.4823529237479"
+              Start="0,0"
+              End="0,29.9823529237479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9823529237479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 3]"
+          TopLeft="1676.33214258782,282.035293958787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.83235296648"
+              Start="0,0"
+              End="0,24.33235296648">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.33235296648" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 3]"
+          TopLeft="1680.94642833024,355.467646925267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.032352738581"
+              Start="0,0"
+              End="0,20.532352738581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.532352738581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1077,13 +2749,13 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Push supermarket_sales_SOURCE into STAGE\supermarket_sales"
-          TopLeft="280.714286311853,65.7647058247076" />
-        <NodeLayout
           Size="204,41.6"
           Id="Package\Push supermarket_sales_SOURCE into STAGE\supermarket_sales_STAGE"
           TopLeft="265.000000564115,184.294117485518" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Push supermarket_sales_SOURCE into STAGE\supermarket_sales"
+          TopLeft="280.714286311853,65.7647058247076" />
         <EdgeLayout
           Id="Package\Push supermarket_sales_SOURCE into STAGE.Paths[Excel Source Output]"
           TopLeft="365.457143437984,107.364705824708">
@@ -1124,6 +2796,200 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Push supermarket_sales_SOURCE into STAGE\supermarket_sales_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Push product_SOURCE into STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Push product_SOURCE into STAGE\product"
+          TopLeft="315.000000670552,67.1058823207671" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Push product_SOURCE into STAGE\product_STAGE"
+          TopLeft="305.714286365071,174.352941023643" />
+        <EdgeLayout
+          Id="Package\Push product_SOURCE into STAGE.Paths[Excel Source Output]"
+          TopLeft="372.200000670552,108.705882320767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.51428569451895,65.6470587028764"
+              Start="0,0"
+              End="9.51428569451895,58.1470587028764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8235293514382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8235293514382"
+                    Point2="0,32.8235293514382"
+                    Point3="4,32.8235293514382" />
+                  <mssgle:LineSegment
+                    End="5.51428569451895,32.8235293514382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.51428569451895,32.8235293514382"
+                    Point2="9.51428569451895,32.8235293514382"
+                    Point3="9.51428569451895,36.8235293514382" />
+                  <mssgle:LineSegment
+                    End="9.51428569451895,58.1470587028764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Push product_line_SOURCE into STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Push product_line_SOURCE into STAGE\product_line"
+          TopLeft="328.999995097518,37.9999994337559" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Push product_line_SOURCE into STAGE\product_line_STAGE"
+          TopLeft="302.999995484948,185.999997228384" />
+        <EdgeLayout
+          Id="Package\Push product_line_SOURCE into STAGE.Paths[Excel Source Output]"
+          TopLeft="393.799995291233,79.5999994337559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,106.399997794628"
+              Start="0,0"
+              End="0,98.8999977946281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.8999977946281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Push city_SOURCE into STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="94.4,41.6"
+          Id="Package\Push city_SOURCE into STAGE\city"
+          TopLeft="280.714286311853,65.7647058247076" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Push city_SOURCE into STAGE\city_STAGE"
+          TopLeft="261.999996095896,214.99999679625" />
+        <EdgeLayout
+          Id="Package\Push city_SOURCE into STAGE.Paths[Excel Source Output]"
+          TopLeft="327.957141203874,107.364705824708">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,107.635290971543"
+              Start="0,0"
+              End="0,100.135290971543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.135290971543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push city_SOURCE into STAGE\city">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push product_SOURCE into STAGE\product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push product_SOURCE into STAGE\product_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push product_line_SOURCE into STAGE\product_line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push product_line_SOURCE into STAGE\product_line_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push city_SOURCE into STAGE\city_STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

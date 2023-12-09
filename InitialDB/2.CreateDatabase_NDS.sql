@@ -17,7 +17,8 @@ create table supermarket_sales_NDS(
 	[Rating] decimal(10,1),
 	[createdDate]	datetime,
 	[updatedDate]	datetime,
-	
+	sourceId int,
+
 	CONSTRAINT PK_supermarket_sales_NDS
 	PRIMARY KEY CLUSTERED (id)
 )
@@ -29,7 +30,8 @@ create table product_NDS(
 	[ProductLine] varchar(50),
 	[createdDate] datetime,
 	[updatedDate] datetime,
-	
+	sourceId int,
+
 	CONSTRAINT PK_product_NDS
 	PRIMARY KEY CLUSTERED (id)
 )
@@ -40,6 +42,7 @@ create table product_line_NDS(
 	[ProductLineID] varchar(5),
 	[createdDate] datetime,
 	[updatedDate] datetime,
+	sourceId int,
 
 	CONSTRAINT PK_product_line_NDS
 	PRIMARY KEY CLUSTERED (id)
@@ -51,6 +54,7 @@ create table city_nds(
 	[City] varchar(50),
 	[createdDate] datetime,
 	[updatedDate] datetime,
+	sourceId int,
 
 	CONSTRAINT PK_city_NDS
 	PRIMARY KEY CLUSTERED (id)

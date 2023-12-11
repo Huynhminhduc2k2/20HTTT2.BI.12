@@ -11,10 +11,36 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STAGE-NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{7D2F4422-3C75-4DA5-8C57-91258DE07F7B}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{658F752D-B7B5-46CB-9BDA-1A7F8374EBC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FDCE6C03-9CB1-4597-967D-81298F5F8D3B}"
+      DTS:ObjectName="LAPTOP-V9EI97MS.NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-V9EI97MS;Initial Catalog=NDS;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-STAGE-NDS-{FDCE6C03-9CB1-4597-967D-81298F5F8D3B}LAPTOP-V9EI97MS.NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04B126E0-5240-4C2F-86E3-8444C22F474F}"
+      DTS:ObjectName="LAPTOP-V9EI97MS.STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-V9EI97MS;Initial Catalog=STAGE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-STAGE-NDS-{04B126E0-5240-4C2F-86E3-8444C22F474F}LAPTOP-V9EI97MS.STAGE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables />
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>

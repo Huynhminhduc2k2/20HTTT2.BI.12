@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STAGE-NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{853A3FD9-8C37-4F57-BBD8-10F309BDAD82}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{7C987012-C229-40D1-AB89-7A90775EB817}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,13 +68,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Import city_STAGE to city_NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{80582e3a-cecf-44b6-8b30-c09ceaa6c5de}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Import city_STAGE to city_NDS"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -82,7 +82,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\add SourceID"
+              refId="Package\Import city_STAGE to city_NDS\add SourceID"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -90,7 +90,7 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\add SourceID.Inputs[Derived Column Input]"
+                  refId="Package\Import city_STAGE to city_NDS\add SourceID.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -98,18 +98,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Output]"
+                  refId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\add SourceID.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\add SourceID.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Output].Columns[sourceId]"
+                      refId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Output].Columns[sourceId]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Output].Columns[sourceId]"
+                      lineageId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Output].Columns[sourceId]"
                       name="sourceId"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -130,23 +130,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\add SourceID.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\add SourceID.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -155,7 +155,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\City_NDS"
+              refId="Package\Import city_STAGE to city_NDS\City_NDS"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -170,7 +170,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[city_nds]</property>
+                  name="OpenRowset">[dbo].[city_NDS]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -212,79 +212,79 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\City_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
+                  refId="Package\Import city_STAGE to city_NDS\City_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].Columns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].Columns[Branch]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Branch"
-                      externalMetadataColumnId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].Columns[createdDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="createdDate"
-                      externalMetadataColumnId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].Columns[updatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="updatedDate"
-                      externalMetadataColumnId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].Columns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="City"
-                      externalMetadataColumnId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].Columns[sourceId]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].Columns[sourceId]"
                       cachedDataType="i4"
                       cachedName="sourceId"
-                      externalMetadataColumnId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
-                      lineageId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Output].Columns[sourceId]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
+                      lineageId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Output].Columns[sourceId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Branch]"
                       dataType="wstr"
                       length="255"
                       name="Branch" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       dataType="wstr"
                       length="255"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
                       dataType="dbTimeStamp"
                       name="updatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
                       dataType="i4"
                       name="sourceId" />
                   </externalMetadataColumns>
@@ -292,22 +292,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\City_NDS.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\City_NDS.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\City_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -316,7 +316,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\createdDate,updatedDate"
+              refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -324,17 +324,17 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input]"
+                  refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input].Columns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input].Columns[createdDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="createdDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -352,12 +352,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="updatedDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -380,31 +380,31 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Output]"
+                  refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -413,7 +413,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Load City_Stage"
+              refId="Package\Import city_STAGE to city_NDS\Load City_Stage"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -462,115 +462,115 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Load City_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-EG3I3875.STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-EG3I3875.STAGE]"
+                  refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output]"
+                  refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[Branch]"
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[Branch]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]"
                       name="Branch"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[createdDate]"
                       name="createdDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
                       name="updatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[Branch]"
                       dataType="wstr"
                       length="255"
                       name="Branch" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
                       dataType="dbTimeStamp"
                       name="createdDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
                       dataType="dbTimeStamp"
                       name="updatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       dataType="wstr"
                       length="255"
                       name="City" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[Branch]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[Branch]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[Branch]"
                       name="Branch" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[createdDate]"
                       name="createdDate" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
                       name="updatedDate" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[City]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[City]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -579,7 +579,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup id in City_NDS"
+              refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -635,7 +635,7 @@ where [refTable].[Branch] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]};</property>
+                  name="ParameterMap">#{Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -647,23 +647,23 @@ where [refTable].[Branch] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup id in City_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
+                  refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input]"
+                  refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input].Columns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input].Columns[Branch]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Branch"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]">
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -681,18 +681,18 @@ where [refTable].[Branch] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Match Output]"
+                  refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="RedirectRow"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Match Output].Columns[id]"
+                      refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Match Output].Columns[id]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Match Output].Columns[id]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Match Output].Columns[id]"
                       name="id"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -706,30 +706,30 @@ where [refTable].[Branch] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup No Match Output]"
+                  refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -738,7 +738,7 @@ where [refTable].[Branch] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Command"
+              refId="Package\Import city_STAGE to city_NDS\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -763,45 +763,45 @@ where [refTable].[Branch] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-EG3I3875.NDS]"
+                  refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[updatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="updatedDate"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[City]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="City"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[Branch]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[Branch]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Branch"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]" />
+                      externalMetadataColumnId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[Branch]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
@@ -812,7 +812,7 @@ where [refTable].[Branch] = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="wstr"
                       length="255"
                       name="Param_1">
@@ -824,7 +824,7 @@ where [refTable].[Branch] = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
                       length="255"
                       name="Param_2">
@@ -840,29 +840,29 @@ where [refTable].[Branch] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -871,7 +871,7 @@ where [refTable].[Branch] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\updatedDate"
+              refId="Package\Import city_STAGE to city_NDS\updatedDate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -879,17 +879,17 @@ where [refTable].[Branch] = ?</property>
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\updatedDate.Inputs[Derived Column Input]"
+                  refId="Package\Import city_STAGE to city_NDS\updatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
+                      refId="Package\Import city_STAGE to city_NDS\updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="updatedDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      lineageId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output].Columns[updatedDate]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -912,31 +912,31 @@ where [refTable].[Branch] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Output]"
+                  refId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\updatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\updatedDate.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Error Output]"
+                  refId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\updatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import city_STAGE to city_NDS\updatedDate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -947,40 +947,963 @@ where [refTable].[Branch] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Lookup id in City_NDS.Inputs[Lookup Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output]"
+              endId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\add SourceID.Outputs[Derived Column Output]" />
+              startId="Package\Import city_STAGE to city_NDS\add SourceID.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\City_NDS.Inputs[OLE DB Destination Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output1]"
+              endId="Package\Import city_STAGE to city_NDS\City_NDS.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\createdDate,updatedDate.Outputs[Derived Column Output]" />
+              startId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output2]"
+              endId="Package\Import city_STAGE to city_NDS\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\updatedDate.Outputs[Derived Column Output]" />
+              startId="Package\Import city_STAGE to city_NDS\updatedDate.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Error Output]"
-              endId="Package\Data Flow Task\createdDate,updatedDate.Inputs[Derived Column Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[Lookup Error Output]"
+              endId="Package\Import city_STAGE to city_NDS\createdDate,updatedDate.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Error Output]" />
+              startId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Error Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\updatedDate.Inputs[Derived Column Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[Lookup Match Output]"
+              endId="Package\Import city_STAGE to city_NDS\updatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup id in City_NDS.Outputs[Lookup Match Output]" />
+              startId="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\add SourceID.Inputs[Derived Column Input]"
+              refId="Package\Import city_STAGE to city_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Import city_STAGE to city_NDS\add SourceID.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Load City_Stage.Outputs[OLE DB Source Output]" />
+              startId="Package\Import city_STAGE to city_NDS\Load City_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import product_line_STAGE to product_line_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{665739cc-4f8c-47ad-ad6c-c5b66a577b61}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import product_line_STAGE to product_line_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add sourceId column to product_line_STAGE"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Output].Columns[sourceId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Output].Columns[sourceId]"
+                      name="sourceId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert new productLine row into product_line_NDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[product_line_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].Columns[Product line]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Product line"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[Product line]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].Columns[ProductLineID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductLineID"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].Columns[createdDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdDate"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[createdDate]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].Columns[sourceId]"
+                      cachedDataType="i4"
+                      cachedName="sourceId"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Output].Columns[sourceId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product line" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLineID" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input].ExternalColumns[sourceId]"
+                      dataType="i4"
+                      name="sourceId" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load product_line_STAGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[product_line_STAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[Product line]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[Product line]"
+                      length="255"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[Product line]"
+                      name="Product line"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[ProductLineID]"
+                      length="255"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]"
+                      name="ProductLineID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product line" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductLineID" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[Product line]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[Product line]"
+                      name="Product line" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ProductLineID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ProductLineID]"
+                      name="ProductLineID" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      name="updatedDate" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup the productLineID in product_line_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select id, ProductLineID from product_line_NDS where sourceId = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select id, ProductLineID from product_line_NDS where sourceId = 1) [refTable]
+where [refTable].[ProductLineID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductLineID" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input].Columns[ProductLineID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductLineID"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ProductLineID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Match Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Match Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update product_line_NDS set [Product line] = ?,  [updatedDate] = ? where sourceId = 1 and [ProductLineID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[Product line]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Product line"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[Product line]" />
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductLineID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ProductLineID"
+                      externalMetadataColumnId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[ProductLineID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Update createdDate, updatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input].Columns[createdDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Update updatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Inputs[Derived Column Input].Columns[updatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updatedDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output1]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output2]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[Lookup Error Output]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[Lookup Match Output]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import product_line_STAGE to product_line_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B7E4830-3308-4491-B960-5A95C2156782}"
+      DTS:From="Package\Import product_line_STAGE to product_line_NDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import city_STAGE to city_NDS" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -992,57 +1915,29 @@ where [refTable].[Branch] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="184.285714550286,110.470588191055" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+          Size="225.6,41.6"
+          Id="Package\Import city_STAGE to city_NDS"
+          TopLeft="182.142857402867,167.823529317254" />
         <NodeLayout
-          Size="122.4,41.6"
-          Id="Package\Data Flow Task\City_NDS"
-          TopLeft="525.39999435246,402.799994665384" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Data Flow Task\Lookup id in City_NDS"
-          TopLeft="306.999995425343,222.999996677041" />
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\Data Flow Task\updatedDate"
-          TopLeft="226.999996617436,311.999995350838" />
-        <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Data Flow Task\createdDate,updatedDate"
-          TopLeft="459.999993145466,311.79999602139" />
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Data Flow Task\add SourceID"
-          TopLeft="327.999995112419,142.999997869134" />
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Data Flow Task\Load City_Stage"
-          TopLeft="322.999995186925,64.9999990314245" />
+          Size="309.6,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS"
+          TopLeft="141.428571601911,76.7176471332267" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="399.699995149672,106.599999031425">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="295.585714502389,118.317647133227">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.3999988377094"
+              EndConnector="0,49.5058821840269"
               Start="0,0"
-              End="0,28.8999988377094">
+              End="0,42.0058821840269">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8999988377094" />
+                    End="0,42.0058821840269" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1051,8 +1946,44 @@ where [refTable].[Branch] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import city_STAGE to city_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Import city_STAGE to city_NDS\City_NDS"
+          TopLeft="525.39999435246,402.799994665384" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS"
+          TopLeft="306.999995425343,222.999996677041" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Import city_STAGE to city_NDS\createdDate,updatedDate"
+          TopLeft="459.999993145466,311.79999602139" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Import city_STAGE to city_NDS\updatedDate"
+          TopLeft="226.999996617436,311.999995350838" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Import city_STAGE to city_NDS\add SourceID"
+          TopLeft="327.999995112419,142.999997869134" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Import city_STAGE to city_NDS\OLE DB Command"
+          TopLeft="223.99999666214,396.999994084239" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Import city_STAGE to city_NDS\Load City_Stage"
+          TopLeft="322.999995186925,64.9999990314245" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          Id="Package\Import city_STAGE to city_NDS.Paths[Lookup Match Output]"
           TopLeft="369.399995425343,264.599996677041">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1088,7 +2019,7 @@ where [refTable].[Branch] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Error Output]"
+          Id="Package\Import city_STAGE to city_NDS.Paths[Lookup Error Output]"
           TopLeft="427.799995425343,264.599996677041">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1124,7 +2055,41 @@ where [refTable].[Branch] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          Id="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output2]"
+          TopLeft="296.599996617436,353.599995350838">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.80000004470355,43.3999987334012"
+              Start="0,0"
+              End="9.80000004470355,35.8999987334012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6999993667006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6999993667006"
+                    Point2="0,21.6999993667006"
+                    Point3="4,21.6999993667006" />
+                  <mssgle:LineSegment
+                    End="5.80000004470355,21.6999993667006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.80000004470355,21.6999993667006"
+                    Point2="9.80000004470355,21.6999993667006"
+                    Point3="9.80000004470355,25.6999993667006" />
+                  <mssgle:LineSegment
+                    End="9.80000004470355,35.8999987334012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output1]"
           TopLeft="559.599993145466,353.39999602139">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1158,7 +2123,7 @@ where [refTable].[Branch] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          Id="Package\Import city_STAGE to city_NDS.Paths[Derived Column Output]"
           TopLeft="398.899995268881,184.599997869134">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1179,36 +2144,20 @@ where [refTable].[Branch] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="223.99999666214,396.999994084239" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
-          TopLeft="296.599996617436,353.599995350838">
+          Id="Package\Import city_STAGE to city_NDS.Paths[OLE DB Source Output]"
+          TopLeft="399.699995149672,106.599999031425">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.80000004470355,43.3999987334012"
+              EndConnector="0,36.3999988377094"
               Start="0,0"
-              End="9.80000004470355,35.8999987334012">
+              End="0,28.8999988377094">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6999993667006" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6999993667006"
-                    Point2="0,21.6999993667006"
-                    Point3="4,21.6999993667006" />
-                  <mssgle:LineSegment
-                    End="5.80000004470355,21.6999993667006" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.80000004470355,21.6999993667006"
-                    Point2="9.80000004470355,21.6999993667006"
-                    Point3="9.80000004470355,25.6999993667006" />
-                  <mssgle:LineSegment
-                    End="9.80000004470355,35.8999987334012" />
+                    End="0,28.8999988377094" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1221,7 +2170,7 @@ where [refTable].[Branch] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\City_NDS">
+    design-time-name="Package\Import city_STAGE to city_NDS\City_NDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1234,12 +2183,12 @@ where [refTable].[Branch] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup id in City_NDS">
+    design-time-name="Package\Import city_STAGE to city_NDS\Lookup id in City_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1249,7 +2198,7 @@ where [refTable].[Branch] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1257,7 +2206,7 @@ where [refTable].[Branch] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Load City_Stage">
+    design-time-name="Package\Import city_STAGE to city_NDS\Load City_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1269,5 +2218,221 @@ where [refTable].[Branch] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import product_line_STAGE to product_line_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="300,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Lookup the productLineID in product_line_NDS"
+          TopLeft="248.571429100572,206.470588054315" />
+        <NodeLayout
+          Size="316.8,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Insert new productLine row into product_line_NDS"
+          TopLeft="411.666660532356,420.999995604158" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Update createdDate, updatedDate"
+          TopLeft="444.166660048068,320.166663773358" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\OLE DB Command"
+          TopLeft="115.023810242664,415.711764096765" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Load product_line_STAGE"
+          TopLeft="290.71428633314,10.7058823435571" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Update updatedDate"
+          TopLeft="121.142857588068,327.32352878125" />
+        <NodeLayout
+          Size="289.6,41.6"
+          Id="Package\Import product_line_STAGE to product_line_NDS\Add sourceId column to product_line_STAGE"
+          TopLeft="246.428571953153,117.764705779128" />
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[Lookup Match Output]"
+          TopLeft="349.904762433905,248.070588054315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-140.761904845837,79.2529407269346"
+              Start="0,0"
+              End="-140.761904845837,71.7529407269346">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9534402930877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.9534402930877"
+                    Point2="0,31.9534402930877"
+                    Point3="-4,31.9534402930877" />
+                  <mssgle:LineSegment
+                    End="-136.761904845837,31.9534402930877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-136.761904845837,31.9534402930877"
+                    Point2="-140.761904845837,31.9534402930877"
+                    Point3="-140.761904845837,35.9534402930877" />
+                  <mssgle:LineSegment
+                    End="-140.761904845837,71.7529407269346" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.572339141669,36.9534402930877,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[Lookup Error Output]"
+          TopLeft="447.238095767239,248.070588054315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.528564280829,72.0960757190428"
+              Start="0,0"
+              End="116.528564280829,64.5960757190428">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0679138177573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.0679138177573"
+                    Point2="0,29.0679138177573"
+                    Point3="4,29.0679138177573" />
+                  <mssgle:LineSegment
+                    End="112.528564280829,29.0679138177573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.528564280829,29.0679138177573"
+                    Point2="116.528564280829,29.0679138177573"
+                    Point3="116.528564280829,33.0679138177573" />
+                  <mssgle:LineSegment
+                    End="116.528564280829,64.5960757190428" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.3978954216645,34.0679138177573,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output2]"
+          TopLeft="566.916660290212,361.766663773358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.2333318307998"
+              Start="0,0"
+              End="0,51.7333318307998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7333318307998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output1]"
+          TopLeft="209.142857588068,368.92352878125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.7190473454042,46.7882353155155"
+              Start="0,0"
+              End="-11.7190473454042,39.2882353155155">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3941176577578" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3941176577578"
+                    Point2="0,23.3941176577578"
+                    Point3="-4,23.3941176577578" />
+                  <mssgle:LineSegment
+                    End="-7.71904734540422,23.3941176577578" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.71904734540422,23.3941176577578"
+                    Point2="-11.7190473454042,23.3941176577578"
+                    Point3="-11.7190473454042,27.3941176577578" />
+                  <mssgle:LineSegment
+                    End="-11.7190473454042,39.2882353155155" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[Derived Column Output]"
+          TopLeft="394.900000526863,159.364705779128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.105882275187"
+              Start="0,0"
+              End="0,39.605882275187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.605882275187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import product_line_STAGE to product_line_NDS.Paths[OLE DB Source Output]"
+          TopLeft="390.971429143147,52.3058823435571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.4588234355706"
+              Start="0,0"
+              End="0,57.9588234355706">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.9588234355706" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

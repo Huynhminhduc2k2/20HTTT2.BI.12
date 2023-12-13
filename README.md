@@ -9,49 +9,18 @@
 
 ### SOURCE - STAGE
 
+- SSIS hỗ trợ đưa dữ liệu từ bất kỳ SOURCE vào STAGE để dễ dàng ETL (Extract-Transform-Load) cho từ n nguồn trở lên.
+- Điều này giúp cho dễ quản lý các dữ liệu với định dạng khác nhau từ nhiều nguồn.
+#### Quy tắc:
+- Add thêm 2 trường createdDate và updatedDate vào các bảng trong nguồn.
+- Cập nhật CET để có khoảng cách giữa LSET và CET để lấy dữ liệu thay đổi
+- Tạo data flow để cập nhật lại khoảng cách LSET, CET
+- Say khi đẩy SOURCE - STAGE xong thì cập nhật lại LSET để mai mốt không lấy lại dữ liệu (cũ) đó nữa.
+
 #### Bước 1 (Tạo DBs):
 
-- Tạo 2 database "STAGE" và "METADB"
-  - METADB có bảng như sau:
--     --Tạo bảng dataflow trong metadb
-      CREATE TABLE DATA_FLOW
-      (
-      	ID INT NOT NULL IDENTITY(1,1),
-      	NAME VARCHAR(50) NOT NULL,
-      	STATUS INT,
-      	LSET DATETIME,
-      	CET DATETIME,
-      	CONSTRAINT PK_DATA_FLOW
-      	PRIMARY KEY CLUSTERED (ID)
-      )
-
-      GO
-      --Kiểm tra các source trong dataflow
-      SELECT * FROM DATA_FLOW
-
-      --Xóa dữ liệu trong dataflow
-      DELETE from DATA_FLOW
-
-      --Cập nhật lại CET và LSET để nạp vào STAGE
-      update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_STAGE'
-      update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_STAGE'
-
-      update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_STAGE'
-      update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_STAGE'
-
-      update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_STAGE'
-      update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_STAGE'
-
-      update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'city_STAGE'
-      update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'city_STAGE'
-
-      --Thêm giá trị của bảng stage vào dataflow để quản lý
-      INSERT INTO DATA_FLOW (NAME, STATUS, LSET, CET)
-      VALUES ('supermarket_sales_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-      ('product_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-      ('product_line_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-      ('city_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00')
-
+- Tạo 2 database "STAGE" và "METADB" (xem file đính kèm trong InitialDB -> 1.CreateMETADB.sql)
+  
 #### Bước 2 (Nạp SOURCE vào STAGE):
 
 - Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: STAGE)
@@ -60,10 +29,15 @@
 
 ### STAGE - NDS
 
+- Ở giai đoạn này, dữ liệu bắt đầu được chuẩn hóa, làm sạch để nâng cao chất lượng dữ liệu và có các SK (SurrogateKey: khóa chính của từng bảng liên quan trong NDS), NK (NaturalKey: khóa chính của các bảng con) và sourceId (khóa nguồn: giúp xác định vị trí của các dữ liệu từ nguồn nào).
+#### Quy tắc:
+- Tạo các bảng NDS chứa các trường dữ liệu cần thêm để quản lý.
+- Tiến hành đẩy dữ liệu từ STAGE -> NDS
+- Dữ liệu nào chưa có trong các table_NDS thì insert vào, cái nào có rồi mà thay đổi thì update lại dữ liệu.
+
 #### Bước 1 (Tạo DB NDS):
 
-- Tạo database "NDS" có các bảng và khóa
-- ...
+- Tạo database "NDS" có các bảng rỗng tự khởi tạo (xem file đính kèm InitialDB -> 2.CreateDatabase_NDS.sql)
 
 #### Bước 2 (Nạp STAGE vào NDS - Normalize Data Store):
 

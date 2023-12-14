@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>SSIS</Name>
-    <LastWriteTime>2023-12-07T15:30:16.9183369Z</LastWriteTime>
+    <LastWriteTime>2023-12-14T14:42:35.949057Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SOURCE-STAGE.dtsx</Name>
-      <LastWriteTime>2023-12-07T15:29:51.0559753Z</LastWriteTime>
+      <LastWriteTime>2023-12-13T15:39:30.8268558Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STAGE-NDS.dtsx</Name>
-      <LastWriteTime>2023-11-20T08:26:17.7385464Z</LastWriteTime>
+      <LastWriteTime>2023-12-14T14:52:45.1041454Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

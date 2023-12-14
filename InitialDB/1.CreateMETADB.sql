@@ -32,17 +32,17 @@ update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'city_STAGE'
 update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'city_STAGE'
 
 --NDS
-update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_NDS'
-update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_NDS'
+update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_DDS'
+update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'supermarket_sales_DDS'
 
-update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_NDS'
-update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_NDS'
+update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_DDS'
+update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_DDS'
 
-update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_NDS'
-update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_NDS'
+update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_DDS'
+update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'product_line_DDS'
 
-update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'city_NDS'
-update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'city_NDS'
+update DATA_FLOW SET LSET = '2006-01-01 00:00:00' WHERE NAME = 'city_DDS'
+update DATA_FLOW SET CET = '2006-01-01 00:00:00' WHERE NAME = 'city_DDS'
 
 --Thêm giá trị của bảng stage vào dataflow để quản lý
 INSERT INTO DATA_FLOW (NAME, STATUS, LSET, CET)
@@ -51,7 +51,7 @@ VALUES ('supermarket_sales_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:0
 ('product_line_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
 ('city_STAGE', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
 
-('supermarket_sales_NDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-('product_NDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-('product_line_NDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
-('city_NDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00')
+('supermarket_sales_DDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
+('product_DDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
+('product_line_DDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00'),
+('city_DDS', 1, '2006-01-01 00:00:00', '2007-01-01 00:00:00')

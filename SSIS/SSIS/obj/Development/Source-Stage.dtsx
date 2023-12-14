@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SOURCE-STAGE"
   DTS:PackageType="5"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{B38DD1AA-3EF5-4904-89D6-CA4AE698DE75}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{440B4058-E425-4D6A-9BFD-8ADA34DA6467}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1871,7 +1871,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Select LSET, CET of city_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1896,7 +1896,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Select LSET, CET of product_line_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1921,7 +1921,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Select LSET, CET of product_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1946,7 +1946,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Select LSET, CET of supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1971,7 +1971,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for city_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1988,7 +1988,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for product_line_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2005,7 +2005,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for product_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2022,7 +2022,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2039,7 +2039,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for city_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2056,7 +2056,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for product_line_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2073,7 +2073,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for product_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2090,7 +2090,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2107,7 +2107,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table city_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2124,7 +2124,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table product_line_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2141,7 +2141,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table product_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2158,7 +2158,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table supermarket_sales_STAGE"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

@@ -1,4 +1,10 @@
-﻿--Tạo bảng dataflow trong metadb
+﻿CREATE DATABASE METADB
+CREATE DATABASE STAGE
+USE METADB
+
+GO
+
+--Tạo bảng dataflow trong metadb
 CREATE TABLE DATA_FLOW
 (
 	ID INT NOT NULL IDENTITY(1,1),

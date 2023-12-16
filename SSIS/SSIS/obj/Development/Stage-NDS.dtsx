@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STAGE-NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{BC5EF829-AC38-49C1-B4B7-B5BDA270AE28}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{D45FD1DD-7617-4850-9F53-F9CAED0C4EED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5914,7 +5914,7 @@ and [sourceId]= ?</property>
         <NodeLayout
           Size="280,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Insert new row to supermarket_sales_NDS"
-          TopLeft="393.999994128943,524.599992623925" />
+          TopLeft="407.749993924052,498.349993015081" />
         <NodeLayout
           Size="312,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the Invoice ID in supermarket_sales_NDS"
@@ -5922,11 +5922,11 @@ and [sourceId]= ?</property>
         <NodeLayout
           Size="176,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Update updatedDate"
-          TopLeft="129.999998062849,427.999993622303" />
+          TopLeft="142.499997876584,411.749993864447" />
         <NodeLayout
           Size="368.8,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\update updatedDate, createdDate to supermarket_sales_NDS"
-          TopLeft="396.999994084239,428.999993607402" />
+          TopLeft="360.749994624406,416.499993793666" />
         <NodeLayout
           Size="258.4,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the productID in product_NDS"
@@ -5934,7 +5934,7 @@ and [sourceId]= ?</property>
         <NodeLayout
           Size="164.8,44.8"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\OLE DB Command"
-          TopLeft="131.793647991793,509.405220976779" />
+          TopLeft="140.543647861408,488.155221293429" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup id in City_NDS"
@@ -5987,33 +5987,33 @@ and [sourceId]= ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.333331724008,41.3999987632037"
+              EndConnector="-112.833331910273,25.1499990053479"
               Start="0,0"
-              End="-125.333331724008,33.8999987632037">
+              End="-112.833331910273,17.6499990053479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.6867341953729" />
+                    End="0,6.13698939501266" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.6867341953729"
-                    Point2="0,16.6867341953729"
-                    Point3="-4,16.6867341953729" />
+                    Point1="0,6.13698939501266"
+                    Point2="0,10.1369893950127"
+                    Point3="-4,10.1369893950127" />
                   <mssgle:LineSegment
-                    End="-121.333331724008,16.6867341953729" />
+                    End="-108.833331910273,10.1369893950127" />
                   <mssgle:CubicBezierSegment
-                    Point1="-121.333331724008,16.6867341953729"
-                    Point2="-125.333331724008,16.6867341953729"
-                    Point3="-125.333331724008,20.6867341953729" />
+                    Point1="-108.833331910273,10.1369893950127"
+                    Point2="-112.833331910273,10.1369893950127"
+                    Point3="-112.833331910273,14.1369893950127" />
                   <mssgle:LineSegment
-                    End="-125.333331724008,33.8999987632037" />
+                    End="-112.833331910273,17.6499990053479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-110.858052580754,21.6867341953729,96.3827734375,11.609375"
+              BoundingBox="-104.608052673886,15.1369893950127,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6091,66 +6091,54 @@ and [sourceId]= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS.Paths[Lookup Error Output]"
-          TopLeft="444.66666312019,386.599994859099">
+          TopLeft="444.666663120191,386.599994859099">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="136.733330964049,42.3999987483024"
+              EndConnector="100.483331504215,29.8999989345675"
               Start="0,0"
-              End="136.733330964049,34.8999987483024">
+              End="100.483331504215,22.3999989345675">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.0897954138566" />
+                    End="0,8.05153018281036" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.0897954138566"
-                    Point2="0,17.0897954138566"
-                    Point3="4,17.0897954138566" />
+                    Point1="0,8.05153018281036"
+                    Point2="0,12.0515301828104"
+                    Point3="4,12.0515301828104" />
                   <mssgle:LineSegment
-                    End="132.733330964049,17.0897954138566" />
+                    End="96.4833315042155,12.0515301828104" />
                   <mssgle:CubicBezierSegment
-                    Point1="132.733330964049,17.0897954138566"
-                    Point2="136.733330964049,17.0897954138566"
-                    Point3="136.733330964049,21.0897954138566" />
+                    Point1="96.4833315042155,12.0515301828104"
+                    Point2="100.483331504215,12.0515301828104"
+                    Point3="100.483331504215,16.0515301828104" />
                   <mssgle:LineSegment
-                    End="136.733330964049,34.8999987483024" />
+                    End="100.483331504215,22.3999989345675" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.5002787632745,22.0897954138566,91.7327734375,11.609375"
+              BoundingBox="4.37527903335773,17.0515301828104,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS.Paths[Derived Column Output2]"
-          TopLeft="581.399994084239,470.599993607402">
+          TopLeft="546.449994274229,458.099993793666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-47.3999999552965,53.9999990165234"
+              EndConnector="0,40.249999221414"
               Start="0,0"
-              End="-47.3999999552965,46.4999990165234">
+              End="0,32.749999221414">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9999995082617" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.9999995082617"
-                    Point2="0,26.9999995082617"
-                    Point3="-4,26.9999995082617" />
-                  <mssgle:LineSegment
-                    End="-43.3999999552965,26.9999995082617" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-43.3999999552965,26.9999995082617"
-                    Point2="-47.3999999552965,26.9999995082617"
-                    Point3="-47.3999999552965,30.9999995082617" />
-                  <mssgle:LineSegment
-                    End="-47.3999999552965,46.4999990165234" />
+                    End="0,32.749999221414" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6161,18 +6149,18 @@ and [sourceId]= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS.Paths[Derived Column Output1]"
-          TopLeft="216.096823027321,469.599993622303">
+          TopLeft="226.721822868996,453.349993864447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.8052273544763"
+              EndConnector="0,34.8052274289817"
               Start="0,0"
-              End="0,32.3052273544763">
+              End="0,27.3052274289817">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.3052273544763" />
+                    End="0,27.3052274289817" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

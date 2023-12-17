@@ -1,4 +1,4 @@
-﻿create database DDS
+create database DDS
 use DDS
 go
 

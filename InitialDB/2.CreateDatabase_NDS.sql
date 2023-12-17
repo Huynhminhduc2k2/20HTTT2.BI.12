@@ -1,3 +1,8 @@
+CREATE DATABASE NDS
+USE NDS
+
+GO
+
 create table supermarket_sales_NDS(
 	id int IDENTITY(1, 1),
 	[Invoice ID] nvarchar(255),

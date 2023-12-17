@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="NDS-DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{597010A0-7D17-44BB-9851-B9CD0D917C72}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{D0104FD2-177F-48E5-83DA-51BAC367024F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -75,32 +75,6 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Get LSET date_NDS"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{9a87e46c-33c3-4209-8adb-cad4a96d7947}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET date_NDS"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{EAE9A439-1B3F-44EA-9D9D-B95BA65A7A6E}"
-          SQLTask:SqlStatementSource="select LSET, CET FROM DATA_FLOW_NDS WHERE NAME = 'supermarket_sales_NDS'"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="CET"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Get LSET product_NDS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -130,7 +104,7 @@
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:Disabled="True"
-      DTS:DTSID="{1ff7a0d1-1667-4f6e-9517-689d364e812c}"
+      DTS:DTSID="{D2333E65-B2C8-4B8A-8B5A-A7826538086E}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Handle dateDIM"
@@ -140,272 +114,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Handle dateDIM\Insert Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Insert Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dateDIM]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Handle dateDIM\Insert Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Invoice ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Invoice ID"
-                      externalMetadataColumnId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Invoice ID]" />
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Time]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Time"
-                      externalMetadataColumnId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Time]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Invoice ID]"
-                      dataType="wstr"
-                      length="255"
-                      name="Invoice ID" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                      dataType="dbTimeStamp"
-                      name="Time" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Handle dateDIM\Insert Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Handle dateDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Handle dateDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Handle dateDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Handle dateDIM\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[supermarket_sales_NDS] SET [Date] = ?,[Time] = ? WHERE [Invoice ID] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Handle dateDIM\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Invoice ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Invoice ID"
-                      externalMetadataColumnId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Invoice ID]" />
-                    <inputColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Time]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Time"
-                      externalMetadataColumnId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Time]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="dbTimeStamp"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="dbTimeStamp"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="wstr"
-                      length="255"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Handle dateDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Handle dateDIM\Slowly Changing Dimension"
               componentClassID="Microsoft.SCD"
@@ -418,7 +126,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Date], [Invoice ID], [Time] FROM [dbo].[supermarket_sales_NDS]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -438,13 +146,13 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether inferred member updates are detected."
-                  name="EnableInferredMember">true</property>
+                  name="EnableInferredMember">false</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the transformation fails when a lookup of an existing record fails."
                   name="FailOnLookupFailure">false</property>
                 <property
-                  dataType="System.Int32"
+                  dataType="System.UInt32"
                   description="Specifies that all rows in the input are new or the transformation detects the change type."
                   name="IncomingRowChangeType"
                   typeConverter="IncomingRowChangeType">1</property>
@@ -456,8 +164,6 @@
               <connections>
                 <connection
                   refId="Package\Handle dateDIM\Slowly Changing Dimension.Connections[LookupConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>
@@ -465,64 +171,8 @@
                 <input
                   refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
                   name="Slowly Changing Dimension Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Date]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Date]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">4</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Invoice ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Invoice ID"
-                      externalMetadataColumnId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Invoice ID]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Invoice ID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Time]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Time"
-                      externalMetadataColumnId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Time]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Time]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">4</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
                   <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Invoice ID]"
-                      dataType="wstr"
-                      length="255"
-                      name="Invoice ID" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Time]"
-                      dataType="dbTimeStamp"
-                      name="Time" />
-                  </externalMetadataColumns>
+                    isUsed="True" />
                 </input>
               </inputs>
               <outputs>
@@ -577,11 +227,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Handle dateDIM\supermarket_sale_NDS"
+              refId="Package\Handle dateDIM\supermarket_sales_NDS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="supermarket_sale_NDS"
+              name="supermarket_sales_NDS"
               usesDispositions="true"
               version="7">
               <properties>
@@ -592,7 +242,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[date_DIM]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -601,9 +251,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Invoice ID], Date, Time
-FROM [supermarket_sales_NDS]
-WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND updatedDate &lt; ?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -620,102 +268,129 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{83422513-6D40-409D-8A82-8D3405AE7B70};"Parameter1:Input",{121D4C13-F237-4D44-8DF7-5B2F2F7ED186};"Parameter2:Input",{83422513-6D40-409D-8A82-8D3405AE7B70};"Parameter3:Input",{121D4C13-F237-4D44-8DF7-5B2F2F7ED186};</property>
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Handle dateDIM\supermarket_sale_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
+                  refId="Package\Handle dateDIM\supermarket_sales_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output]"
+                  refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Date]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Date]"
-                      name="Date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Time]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Time]"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Time]"
-                      name="Time"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Invoice ID]"
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[idDate_SK]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID]"
+                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[idDate_SK]"
                       length="255"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].Columns[Invoice ID]"
-                      name="Invoice ID"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[idDate_SK]"
+                      name="idDate_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[day]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[day]"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[day]"
+                      name="day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[month]"
+                      name="month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Time]"
-                      dataType="dbTimeStamp"
-                      name="Time" />
-                    <externalMetadataColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID]"
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[idDate_SK]"
                       dataType="wstr"
                       length="255"
-                      name="Invoice ID" />
+                      name="idDate_SK" />
+                    <externalMetadataColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[day]"
+                      dataType="wstr"
+                      length="255"
+                      name="day" />
+                    <externalMetadataColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[month]"
+                      dataType="wstr"
+                      length="255"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      dataType="wstr"
+                      length="255"
+                      name="year" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID]"
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[idDate_SK]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID]"
-                      name="Invoice ID" />
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[idDate_SK]"
+                      name="idDate_SK" />
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Date]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Date]"
-                      name="Date" />
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[day]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[day]"
+                      name="day" />
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Time]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[Time]"
-                      name="Time" />
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[month]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[month]"
+                      name="month" />
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -726,20 +401,10 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           </components>
           <paths>
             <path
-              refId="Package\Handle dateDIM.Paths[Inferred Member Updates Output]"
-              endId="Package\Handle dateDIM\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Inferred Member Updates Output"
-              startId="Package\Handle dateDIM\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
-            <path
-              refId="Package\Handle dateDIM.Paths[New Output]"
-              endId="Package\Handle dateDIM\Insert Destination.Inputs[OLE DB Destination Input]"
-              name="New Output"
-              startId="Package\Handle dateDIM\Slowly Changing Dimension.Outputs[New Output]" />
-            <path
               refId="Package\Handle dateDIM.Paths[OLE DB Source Output]"
               endId="Package\Handle dateDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
-              startId="Package\Handle dateDIM\supermarket_sale_NDS.Outputs[OLE DB Source Output]" />
+              startId="Package\Handle dateDIM\supermarket_sales_NDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -835,11 +500,11 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               </outputs>
             </component>
             <component
-              refId="Package\Handle productDIM\Insert Destination"
+              refId="Package\Handle productDIM\Insert Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert Destination"
+              name="Insert Destination 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -892,7 +557,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               </properties>
               <connections>
                 <connection
-                  refId="Package\Handle productDIM\Insert Destination.Connections[OleDbConnection]"
+                  refId="Package\Handle productDIM\Insert Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
                   connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -900,46 +565,46 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               </connections>
               <inputs>
                 <input
-                  refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[id_Product_SK]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="ProductID"
-                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idProduct]"
-                      lineageId="Package\Handle productDIM\product_NDS.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                      cachedName="id_Product_SK"
+                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[idProduct]"
+                      lineageId="Package\Handle productDIM\Data Conversion.Outputs[Data Conversion Output].Columns[id_Product_SK]" />
                     <inputColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Quantity]"
                       cachedDataType="r8"
                       cachedName="Quantity"
-                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
-                      lineageId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output].Columns[Quantity]" />
+                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output].Columns[Quantity]" />
                     <inputColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductLine]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductLine]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ProductLine"
-                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                      externalMetadataColumnId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
                       lineageId="Package\Handle productDIM\product_NDS.Outputs[OLE DB Source Output].Columns[ProductLine]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idProduct]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[idProduct]"
                       dataType="wstr"
                       length="255"
                       name="idProduct" />
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       dataType="r8"
                       name="Quantity" />
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
                       dataType="wstr"
                       length="255"
                       name="ProductLine" />
@@ -948,22 +613,22 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Handle productDIM\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Handle productDIM\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle productDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Handle productDIM\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Handle productDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Handle productDIM\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Handle productDIM\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -972,11 +637,11 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               </outputs>
             </component>
             <component
-              refId="Package\Handle productDIM\Lookup"
+              refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              name="Lookup quantity according to productID in supermarket_sales"
               usesDispositions="true"
               version="6">
               <properties>
@@ -1042,7 +707,7 @@ where [refTable].[ProductID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Handle productDIM\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.NDS]"
                   description="Connection manager used to access lookup data."
@@ -1050,11 +715,11 @@ where [refTable].[ProductID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Handle productDIM\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Handle productDIM\Lookup.Inputs[Lookup Input].Columns[id_Product_SK]"
+                      refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input].Columns[id_Product_SK]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="id_Product_SK"
@@ -1076,18 +741,18 @@ where [refTable].[ProductID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Handle productDIM\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output].Columns[Quantity]"
+                      refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output].Columns[Quantity]"
                       dataType="r8"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output].Columns[Quantity]"
+                      lineageId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output].Columns[Quantity]"
                       name="Quantity"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1101,30 +766,30 @@ where [refTable].[ProductID] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Handle productDIM\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Handle productDIM\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Handle productDIM\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Handle productDIM\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle productDIM\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Handle productDIM\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1133,11 +798,11 @@ where [refTable].[ProductID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Handle productDIM\OLE DB Command"
+              refId="Package\Handle productDIM\OLE DB Command 1"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
+              name="OLE DB Command 1"
               usesDispositions="true"
               version="2">
               <properties>
@@ -1158,7 +823,7 @@ where [refTable].[ProductID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Handle productDIM\OLE DB Command.Connections[OleDbConnection]"
+                  refId="Package\Handle productDIM\OLE DB Command 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
                   connectionManagerRefId="Package.ConnectionManagers[LAPTOP-V9EI97MS.DDS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1166,37 +831,37 @@ where [refTable].[ProductID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_Product_SK]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_Product_SK]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="id_Product_SK"
-                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Handle productDIM\Data Conversion.Outputs[Data Conversion Output].Columns[id_Product_SK]" />
                     <inputColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductLine]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ProductLine]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ProductLine"
-                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Handle productDIM\product_NDS.Outputs[OLE DB Source Output].Columns[ProductLine]" />
                     <inputColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Quantity]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Quantity]"
                       cachedDataType="r8"
                       cachedName="Quantity"
-                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output].Columns[Quantity]" />
+                      externalMetadataColumnId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output].Columns[Quantity]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="wstr"
                       length="255"
                       name="Param_0">
@@ -1208,7 +873,7 @@ where [refTable].[ProductID] = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="r8"
                       name="Param_1">
                       <properties>
@@ -1219,7 +884,7 @@ where [refTable].[ProductID] = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
                       length="255"
                       name="Param_2">
@@ -1235,29 +900,29 @@ where [refTable].[ProductID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Output]"
+                  refId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Handle productDIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Handle productDIM\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1511,7 +1176,7 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                  name="FailOnFixedAttributeChange">false</property>
+                  name="FailOnFixedAttributeChange">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies the column name for the inferred member."
@@ -1646,22 +1311,22 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           <paths>
             <path
               refId="Package\Handle productDIM.Paths[Data Conversion Output]"
-              endId="Package\Handle productDIM\Lookup.Inputs[Lookup Input]"
+              endId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Handle productDIM\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Handle productDIM.Paths[Inferred Member Updates Output]"
-              endId="Package\Handle productDIM\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Handle productDIM\OLE DB Command 1.Inputs[OLE DB Command Input]"
               name="Inferred Member Updates Output"
               startId="Package\Handle productDIM\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
             <path
               refId="Package\Handle productDIM.Paths[Lookup Match Output]"
               endId="Package\Handle productDIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Lookup Match Output"
-              startId="Package\Handle productDIM\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Handle productDIM.Paths[New Output]"
-              endId="Package\Handle productDIM\Insert Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Handle productDIM\Insert Destination 1.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Handle productDIM\Slowly Changing Dimension.Outputs[New Output]" />
             <path
@@ -1671,24 +1336,6 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
               startId="Package\Handle productDIM\product_NDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set CET date_NDS"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{e1232808-567d-469e-96ba-e2fcb9831384}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set CET date_NDS"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{EAE9A439-1B3F-44EA-9D9D-B95BA65A7A6E}"
-          SQLTask:SqlStatementSource="update DATA_FLOW SET CET = GETDATE() WHERE NAME = 'supermarket_sales_NDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1726,22 +1373,6 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Handle productDIM" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{7adc3135-3121-4dda-bb44-901dee597925}"
-      DTS:From="Package\Get LSET date_NDS"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\Handle dateDIM" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{0e66147c-3f00-4e2d-9160-53900d81068a}"
-      DTS:From="Package\Set CET date_NDS"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Get LSET date_NDS" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1754,27 +1385,15 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Get LSET date_NDS"
-          TopLeft="339.600000106437,150.999999920235" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Get LSET product_NDS"
           TopLeft="60,150.999999920235" />
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Handle dateDIM"
-          TopLeft="391.028571644486,240.470588077105" />
-        <NodeLayout
           Size="169.6,41.6"
           Id="Package\Handle productDIM"
-          TopLeft="110.714285822243,240.470588077104" />
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Set CET date_NDS"
-          TopLeft="341.742857253856,60" />
+          TopLeft="67.8571428738685,240.470588077104" />
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Set CET product_NDS"
@@ -1803,30 +1422,18 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="153.6,192.599999920235">
+          TopLeft="153.128571436934,192.599999920235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.914285822243,47.8705881568696"
+              EndConnector="0,47.870588156869"
               Start="0,0"
-              End="41.914285822243,40.3705881568696">
+              End="0,40.370588156869">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9352940784348" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.9352940784348"
-                    Point2="0,23.9352940784348"
-                    Point3="4,23.9352940784348" />
-                  <mssgle:LineSegment
-                    End="37.914285822243,23.9352940784348" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.914285822243,23.9352940784348"
-                    Point2="41.914285822243,23.9352940784348"
-                    Point3="41.914285822243,27.9352940784348" />
-                  <mssgle:LineSegment
-                    End="41.914285822243,40.3705881568696" />
+                    End="0,40.370588156869" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1835,205 +1442,83 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="425.600000106437,192.599999920235">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.6285715380491,47.8705881568701"
-              Start="0,0"
-              End="42.6285715380491,40.3705881568701">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.935294078435" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.935294078435"
-                    Point2="0,23.935294078435"
-                    Point3="4,23.935294078435" />
-                  <mssgle:LineSegment
-                    End="38.6285715380491,23.935294078435" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.6285715380491,23.935294078435"
-                    Point2="42.6285715380491,23.935294078435"
-                    Point3="42.6285715380491,27.935294078435" />
-                  <mssgle:LineSegment
-                    End="42.6285715380491,40.3705881568701" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="425.071428680147,101.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.3999999202349"
-              Start="0,0"
-              End="0,41.8999999202349">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.8999999202349" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Handle dateDIM"
+          TopLeft="422.32142947044,237.05882332162" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Handle dateDIM">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Handle dateDIM\OLE DB Command"
-          TopLeft="228.3,208.7" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Handle dateDIM\Slowly Changing Dimension"
-          TopLeft="206.7,107.1" />
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Handle dateDIM\supermarket_sale_NDS"
-          TopLeft="216.7,5.49999999999995" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Handle dateDIM\Insert Destination"
-          TopLeft="5.50000000000004,208.7" />
-        <EdgeLayout
-          Id="Package\Handle dateDIM.Paths[Inferred Member Updates Output]"
-          TopLeft="344.033333333333,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.3333333333333,60"
-              Start="0,0"
-              End="-33.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2748091603054" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2748091603054"
-                    Point2="0,24.2748091603054"
-                    Point3="-4,24.2748091603054" />
-                  <mssgle:LineSegment
-                    End="-29.3333333333333,24.2748091603054" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.3333333333333,24.2748091603054"
-                    Point2="-33.3333333333333,24.2748091603054"
-                    Point3="-33.3333333333333,28.2748091603054" />
-                  <mssgle:LineSegment
-                    End="-33.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.0696549479167,29.2748091603054,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Handle dateDIM.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Handle dateDIM.Paths[New Output]"
-          TopLeft="277.366666666667,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-190.666666666667,60"
-              Start="0,0"
-              End="-190.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2748091603053"
-                    Point2="0,24.2748091603053"
-                    Point3="-4,24.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-186.666666666667,24.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-186.666666666667,24.2748091603053"
-                    Point2="-190.666666666667,24.2748091603053"
-                    Point3="-190.666666666667,28.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-190.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <TaskHost
     design-time-name="Package\Handle productDIM">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\Handle productDIM\product_NDS"
-          TopLeft="240.7,5.49999999999995" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Handle productDIM\Lookup"
-          TopLeft="254.3,208.7" />
-        <NodeLayout
           Size="208,41.6"
           Id="Package\Handle productDIM\Slowly Changing Dimension"
-          TopLeft="206.7,310.3" />
+          TopLeft="442.7,310.3" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Handle productDIM\product_NDS"
+          TopLeft="476.7,5.49999999999984" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Handle productDIM\Data Conversion"
+          TopLeft="469.1,107.1" />
+        <NodeLayout
+          Size="368.8,41.6"
+          Id="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales"
+          TopLeft="362.3,208.7" />
+        <EdgeLayout
+          Id="Package\Handle productDIM.Paths[OLE DB Source Output]"
+          TopLeft="546.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Handle productDIM.Paths[Lookup Match Output]"
-          TopLeft="310.7,250.3">
+          TopLeft="546.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Handle productDIM.Paths[Data Conversion Output]"
+          TopLeft="546.7,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2050,18 +1535,56 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Handle productDIM\Insert Destination 1"
+          TopLeft="228.1,411.9" />
+        <EdgeLayout
+          Id="Package\Handle productDIM.Paths[New Output]"
+          TopLeft="513.366666666667,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-199.666666666667,60"
+              Start="0,0"
+              End="-199.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-195.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195.666666666667,24.2748091603053"
+                    Point2="-199.666666666667,24.2748091603053"
+                    Point3="-199.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-199.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="-126.924720052083,29.2748091603053,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Handle productDIM\OLE DB Command"
-          TopLeft="228.3,411.9" />
+          Size="174.4,41.6"
+          Id="Package\Handle productDIM\OLE DB Command 1"
+          TopLeft="459.5,411.9" />
         <EdgeLayout
           Id="Package\Handle productDIM.Paths[Inferred Member Updates Output]"
-          TopLeft="344.033333333333,351.9">
+          TopLeft="580.033333333333,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2091,101 +1614,62 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-91.0696549479167,29.2748091603054,148.8059765625,11.658203125"
+              BoundingBox="-91.0696549479166,29.2748091603054,148.8059765625,11.658203125"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Handle productDIM\Insert Destination"
-          TopLeft="5.50000000000004,411.9" />
-        <EdgeLayout
-          Id="Package\Handle productDIM.Paths[New Output]"
-          TopLeft="277.366666666667,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-190.666666666667,60"
-              Start="0,0"
-              End="-190.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2748091603053"
-                    Point2="0,24.2748091603053"
-                    Point3="-4,24.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-186.666666666667,24.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-186.666666666667,24.2748091603053"
-                    Point2="-190.666666666667,24.2748091603053"
-                    Point3="-190.666666666667,28.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-190.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Handle productDIM\Data Conversion"
-          TopLeft="233.1,107.1" />
-        <EdgeLayout
-          Id="Package\Handle productDIM.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Handle productDIM.Paths[Data Conversion Output]"
-          TopLeft="310.7,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Handle productDIM\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{B582266F-5705-4F1F-A2B8-1636D6CA5204}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[product_DIM]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[id_Product_SK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;idProduct&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;product_NDS.Outputs[OLE DB Source Output].Columns[ProductLine]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductLine&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup quantity according to productID in supermarket_sales.Outputs[Lookup Match Output].Columns[Quantity]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Quantity&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Handle productDIM\product_NDS">
     <Properties>
@@ -2200,12 +1684,12 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Handle productDIM\Lookup">
+    design-time-name="Package\Handle productDIM\Lookup quantity according to productID in supermarket_sales">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2215,10 +1699,74 @@ WHERE (createdDate &gt;= ? AND createdDate &lt; ?) OR (updatedDate &gt;= ? AND u
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Handle dateDIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Handle dateDIM\supermarket_sales_NDS"
+          TopLeft="392.999994143844,47.9999992847442" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Handle dateDIM\Slowly Changing Dimension"
+          TopLeft="384.999994263053,205.999996930361" />
+        <EdgeLayout
+          Id="Package\Handle dateDIM.Paths[OLE DB Source Output]"
+          TopLeft="489.199994203448,89.5999992847442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,116.399997645617"
+              Start="0,0"
+              End="0,108.899997645617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108.899997645617" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Handle dateDIM\supermarket_sales_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Handle productDIM\Insert Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

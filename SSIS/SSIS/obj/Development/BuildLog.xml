@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>SSIS</Name>
-    <LastWriteTime>2023-12-16T15:03:39.9049103Z</LastWriteTime>
+    <LastWriteTime>2023-12-17T16:02:42.5905778Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDS-DDS.dtsx</Name>
-      <LastWriteTime>2023-12-17T14:15:56.2743744Z</LastWriteTime>
+      <LastWriteTime>2023-12-17T16:04:38.3712745Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -1,16 +1,18 @@
-﻿create database DDS
+create database DDS
 use DDS
 go
 
 create table gender_DIM(
-	idGender_SK nvarchar(255) NOT NULL PRIMARY KEY,
+	idGender_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idGender_NK nvarchar(255),
 	GioiTinh nvarchar(255),
 	createdDate datetime,
 	updatedDate datetime
 )
 
 create table khachHang_DIM(
-	idKhachHang_SK nvarchar(255) NOT NULL PRIMARY KEY,
+	idKhachHang_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idKhachHang_NK nvarchar(255),
 	idGender nvarchar(255),
 	idCity nvarchar(255),
 	CustomerType nvarchar(255),
@@ -19,14 +21,16 @@ create table khachHang_DIM(
 )
 
 create table city_DIM(
-	idCity_SK nvarchar(255) NOT NULL PRIMARY KEY,
+	idCity_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idCity_NK nvarchar(255),
 	city nvarchar(255),
 	createdDate datetime,
 	updatedDate datetime
 )
 
 create table date_DIM(
-	idDate_SK nvarchar(255) NOT NULL PRIMARY KEY,
+	idDate_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idDate_NK nvarchar(255),
 	[day] nvarchar(255),
 	[month] nvarchar(255),
 	[year] nvarchar(255),
@@ -36,7 +40,8 @@ create table date_DIM(
 
 create table product_DIM
 (
-	idProduct nvarchar(255) NOT NULL PRIMARY KEY,
+	idProduct_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idProduct_NK nvarchar(255),
 	Quantity float,
 	ProductLine nvarchar (255),
 	createdDate datetime,
@@ -45,14 +50,15 @@ create table product_DIM
 
 create table payment_DIM
 (
-	idPayment nvarchar(255) PRIMARY KEY ,
+	idPayment_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idPayment_NK nvarchar(255),
 	PaymentMethod nvarchar(255),
 	createdDate datetime,
 	updatedDate datetime
 )
 
 create table Fact(
-	InvoiceID nvarchar(255)NOT NULL PRIMARY KEY,
+	InvoiceID nvarchar(255) PRIMARY KEY,
 	idProduct nvarchar(255),
 	idKhachHang nvarchar(255),
 	idPayment nvarchar(255),

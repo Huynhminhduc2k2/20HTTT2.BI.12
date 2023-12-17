@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STAGE-NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{D45FD1DD-7617-4850-9F53-F9CAED0C4EED}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{F408B944-E960-465F-B852-7D6F7B412E6A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5015,22 +5015,22 @@ and [sourceId]= ?</property>
         <NodeLayout
           Size="225.6,41.6"
           Id="Package\Import city_STAGE to city_NDS"
-          TopLeft="122.857142990949,72.9999999886058" />
+          TopLeft="118.095238218907,50.908496739996" />
         <NodeLayout
           Size="309.6,41.6"
           Id="Package\Import product_line_STAGE to product_line_NDS"
-          TopLeft="85.0000000532178,138.658823549521" />
+          TopLeft="80.2380952811762,116.567320300911" />
         <NodeLayout
           Size="264.8,41.6"
           Id="Package\Import product_STAGE to product_NDS"
-          TopLeft="107.857143086742,223.294117451333" />
+          TopLeft="103.0952383147,201.202614202723" />
         <NodeLayout
           Size="369.6,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS"
-          TopLeft="60.7142857158055,301.952941000854" />
+          TopLeft="55.9523809437638,279.861437752244" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="237.728571522084,114.599999988606">
+          TopLeft="232.966666750042,92.5084967399962">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5052,7 +5052,7 @@ and [sourceId]= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="240.02857156998,180.258823549521">
+          TopLeft="235.266666797938,158.167320300911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5074,7 +5074,7 @@ and [sourceId]= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="242.885714401274,264.894117451333">
+          TopLeft="238.123809629232,242.802614202723">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5592,21 +5592,9 @@ and [sourceId]= ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="238.4,41.6"
-          Id="Package\Import product_STAGE to product_NDS\update updatedDate, createdDate"
-          TopLeft="637.692298189952,335.076920027916" />
-        <NodeLayout
-          Size="287.2,41.6"
-          Id="Package\Import product_STAGE to product_NDS\Lookup product_line_id in product_line_NDS"
-          TopLeft="365.538456091514,160.615382222029" />
-        <NodeLayout
           Size="287.2,41.6"
           Id="Package\Import product_STAGE to product_NDS\Update found lookup data into product_NDS"
           TopLeft="195.384612473158,414.923073197787" />
-        <NodeLayout
-          Size="228,41.6"
-          Id="Package\Import product_STAGE to product_NDS\Insert new row to product_NDS"
-          TopLeft="638.461529864715,408.153841603261" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Import product_STAGE to product_NDS\Update updatedDate"
@@ -5616,13 +5604,25 @@ and [sourceId]= ?</property>
           Id="Package\Import product_STAGE to product_NDS\Lookup the productLineID in product_line_NDS"
           TopLeft="351.53845630013,251.538457790247" />
         <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\Import product_STAGE to product_NDS\Add sourceId"
-          TopLeft="429.999993592501,87.9999986886978" />
+          Size="228,41.6"
+          Id="Package\Import product_STAGE to product_NDS\Insert new row to product_NDS"
+          TopLeft="638.461529864715,408.153841603261" />
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\Import product_STAGE to product_NDS\Load product_STAGE"
           TopLeft="416.999993786216,16.9999997466803" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\Import product_STAGE to product_NDS\update updatedDate, createdDate"
+          TopLeft="637.692298189952,335.076920027916" />
+        <NodeLayout
+          Size="287.2,41.6"
+          Id="Package\Import product_STAGE to product_NDS\Lookup product_line_id in product_line_NDS"
+          TopLeft="365.538456091514,160.615382222029" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Import product_STAGE to product_NDS\Add sourceId"
+          TopLeft="429.999993592501,87.9999986886978" />
         <EdgeLayout
           Id="Package\Import product_STAGE to product_NDS.Paths[OLE DB Source Output]"
           TopLeft="503.099993689358,58.5999997466803">
@@ -5835,12 +5835,12 @@ and [sourceId]= ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import product_STAGE to product_NDS\Lookup product_line_id in product_line_NDS">
+    design-time-name="Package\Import product_STAGE to product_NDS\Lookup the productLineID in product_line_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5850,7 +5850,7 @@ and [sourceId]= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5871,29 +5871,6 @@ and [sourceId]= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import product_STAGE to product_NDS\Lookup the productLineID in product_line_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Import product_STAGE to product_NDS\Load product_STAGE">
     <Properties>
       <Property>
@@ -5906,23 +5883,54 @@ and [sourceId]= ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import product_STAGE to product_NDS\Lookup product_line_id in product_line_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="176,41.6"
+          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Update updatedDate"
+          TopLeft="142.499997876584,411.749993864447" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Load supermarket_sale_STAGE"
+          TopLeft="219.285711018102,28.5714281456811" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup id in City_NDS"
+          TopLeft="262.999996080995,176.999997362494" />
+        <NodeLayout
           Size="280,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Insert new row to supermarket_sales_NDS"
           TopLeft="407.749993924052,498.349993015081" />
         <NodeLayout
-          Size="312,41.6"
-          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the Invoice ID in supermarket_sales_NDS"
-          TopLeft="237.999996453524,344.999994859099" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Update updatedDate"
-          TopLeft="142.499997876584,411.749993864447" />
+          Size="164.8,44.8"
+          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\OLE DB Command"
+          TopLeft="140.543647861408,488.155221293429" />
         <NodeLayout
           Size="368.8,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\update updatedDate, createdDate to supermarket_sales_NDS"
@@ -5932,47 +5940,39 @@ and [sourceId]= ?</property>
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the productID in product_NDS"
           TopLeft="246.153842485868,261.230765338127" />
         <NodeLayout
-          Size="164.8,44.8"
-          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\OLE DB Command"
-          TopLeft="140.543647861408,488.155221293429" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup id in City_NDS"
-          TopLeft="262.999996080995,176.999997362494" />
+          Size="312,41.6"
+          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the Invoice ID in supermarket_sales_NDS"
+          TopLeft="237.999996453524,344.999994859099" />
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Add sourceId"
-          TopLeft="283.99999576807,92.9999986141921" />
-        <NodeLayout
-          Size="224.8,41.6"
-          Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Load supermarket_sale_STAGE"
-          TopLeft="254.999996200204,3.5527136788005E-15" />
+          TopLeft="251.142853400537,108.714284094317" />
         <EdgeLayout
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS.Paths[OLE DB Source Output]"
-          TopLeft="367.399996200204,41.6">
+          TopLeft="331.685711018102,70.1714281456811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-13.0000004321338,51.3999986141921"
+              EndConnector="-10.1428576175658,38.5428559486356"
               Start="0,0"
-              End="-13.0000004321338,43.8999986141921">
+              End="-10.1428576175658,31.0428559486356">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.699999307096" />
+                    End="0,15.2714279743178" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.699999307096"
-                    Point2="0,25.699999307096"
-                    Point3="-4,25.699999307096" />
+                    Point1="0,15.2714279743178"
+                    Point2="0,19.2714279743178"
+                    Point3="-4,19.2714279743178" />
                   <mssgle:LineSegment
-                    End="-9.00000043213379,25.699999307096" />
+                    End="-6.14285761756577,19.2714279743178" />
                   <mssgle:CubicBezierSegment
-                    Point1="-9.00000043213379,25.699999307096"
-                    Point2="-13.0000004321338,25.699999307096"
-                    Point3="-13.0000004321338,29.699999307096" />
+                    Point1="-6.14285761756577,19.2714279743178"
+                    Point2="-10.1428576175658,19.2714279743178"
+                    Point3="-10.1428576175658,23.2714279743178" />
                   <mssgle:LineSegment
-                    End="-13.0000004321338,43.8999986141921" />
+                    End="-10.1428576175658,31.0428559486356" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6171,18 +6171,30 @@ and [sourceId]= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS.Paths[Derived Column Output]"
-          TopLeft="354.499995924532,134.599998614192">
+          TopLeft="321.542853400537,150.314284094317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3999987483022"
+              EndConnector="33.0571426804582,26.6857132681772"
               Start="0,0"
-              End="0,34.8999987483022">
+              End="33.0571426804582,19.1857132681772">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8999987483022" />
+                    End="0,9.34285663408862" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.34285663408862"
+                    Point2="0,13.3428566340886"
+                    Point3="4,13.3428566340886" />
+                  <mssgle:LineSegment
+                    End="29.0571426804582,13.3428566340886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.0571426804582,13.3428566340886"
+                    Point2="33.0571426804582,13.3428566340886"
+                    Point3="33.0571426804582,17.3428566340886" />
+                  <mssgle:LineSegment
+                    End="33.0571426804582,19.1857132681772" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6194,6 +6206,42 @@ and [sourceId]= ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Load supermarket_sale_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup id in City_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Insert new row to supermarket_sales_NDS">
     <Properties>
@@ -6208,35 +6256,12 @@ and [sourceId]= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the Invoice ID in supermarket_sales_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the productID in product_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6246,7 +6271,7 @@ and [sourceId]= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6254,12 +6279,12 @@ and [sourceId]= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup id in City_NDS">
+    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Lookup the Invoice ID in supermarket_sales_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6269,23 +6294,10 @@ and [sourceId]= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import supermarket_sales_STAGE to supermarket_sales_NDS\Load supermarket_sale_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

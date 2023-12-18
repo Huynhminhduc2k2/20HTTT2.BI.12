@@ -33,6 +33,7 @@ create table date_DIM(
 	[day] nvarchar(255),
 	[month] nvarchar(255),
 	[year] nvarchar(255),
+	[time] nvarchar(255),
 	createdDate datetime,
 	updatedDate datetime
 )
@@ -59,6 +60,7 @@ create table payment_DIM
 create table Fact(
 	InvoiceID nvarchar(255) PRIMARY KEY,
 	idProduct nvarchar(255),
+	idDate nvarchar(255),
 	idKhachHang nvarchar(255),
 	idPayment nvarchar(255),
 	Rating float,

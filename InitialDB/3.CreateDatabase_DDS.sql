@@ -2,6 +2,14 @@ create database DDS
 use DDS
 go
 
+create table invoice_DIM(
+	idInvoice_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idInvoice_NK nvarchar(255),
+	idProduct nvarchar(255),
+	createdDate datetime,
+	updatedDate datetime
+)
+
 create table gender_DIM(
 	idGender_NK nvarchar(255) NOT NULL PRIMARY KEY,
 	GioiTinh nvarchar(255),
@@ -59,7 +67,6 @@ create table payment_DIM
 
 create table Fact(
 	InvoiceID nvarchar(255) PRIMARY KEY,
-	idProduct nvarchar(255),
 	idDate nvarchar(255),
 	idKhachHang nvarchar(255),
 	idPayment nvarchar(255),

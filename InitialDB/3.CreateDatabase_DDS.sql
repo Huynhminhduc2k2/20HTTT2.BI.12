@@ -5,7 +5,7 @@ go
 create table invoice_DIM(
 	idInvoice_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	idInvoice_NK nvarchar(255),
-	idProduct nvarchar(255),
+	idProduct int,
 	createdDate datetime,
 	updatedDate datetime
 )
@@ -21,7 +21,7 @@ create table khachHang_DIM(
 	idKhachHang_SK int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	idKhachHang_NK nvarchar(255),
 	idGender nvarchar(255),
-	idCity nvarchar(255),
+	idCity int,
 	CustomerType nvarchar(255),
 	createdDate datetime,
 	updatedDate datetime
@@ -68,7 +68,7 @@ create table payment_DIM
 create table Fact(
 	InvoiceID nvarchar(255) PRIMARY KEY,
 	idDate nvarchar(255),
-	idKhachHang nvarchar(255),
+	idKhachHang int,
 	idPayment nvarchar(255),
 	Rating float,
 	grossIncome float,

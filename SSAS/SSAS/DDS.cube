@@ -1,0 +1,309 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="15b746f7-5f6b-454e-97d9-7c25609be17e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DDS</ID>
+  <Name>DDS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="2e912923-963b-46c0-9d97-8a45ae877a16">
+      <ID>Fact</ID>
+      <Name>Fact</Name>
+      <DimensionID>Fact</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4419f6c6-ae22-46bc-a821-17da26011f32">
+          <AttributeID>Invoice ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ee59a674-8357-4891-b711-3f795982b065">
+          <AttributeID>Id Product SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d881026-cf0c-42c9-a051-7f34a77ffec1">
+          <AttributeID>Id Khach Hang SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5de91a52-29da-489e-8413-5ebb840a139b">
+          <AttributeID>Id City SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9f4dfaa6-ca05-445a-a951-737592030b7e">
+          <AttributeID>Id Gender NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8f246455-cd4d-4cbd-8000-6e58cd682f8e">
+          <AttributeID>Id Date NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="09e82527-5526-4e74-9dcd-e49878f84e14">
+          <AttributeID>Id Payment NK</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2a8d3c08-d1d7-4844-a070-251fe033ef1d">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="4e20e937-24ad-461a-9c9a-7027382aaa61">
+      <ID>Id Khach Hang</ID>
+      <Name>Id Khach Hang</Name>
+      <DimensionID>Fact</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b64a71bb-6b86-432d-92c6-f622ee83076a">
+          <AttributeID>Invoice ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d8a214e3-7af8-4c2a-9632-52311523c2df">
+          <AttributeID>Id Product SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="41b0882b-ec80-42be-ae0c-9890159d8fec">
+          <AttributeID>Id Khach Hang SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b9f06cfe-338f-4146-86d7-9032a77b2cbe">
+          <AttributeID>Id City SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ede3e174-a408-46ab-9f20-0b96907c5ca7">
+          <AttributeID>Id Gender NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="089e92f2-a277-49d4-a879-54103c6ea93f">
+          <AttributeID>Id Date NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83ef5e3b-c7d9-4d2c-b4f4-9bf2fa8bde32">
+          <AttributeID>Id Payment NK</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="485322b4-f1cd-47b0-b929-1ba009a74cb1">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="b5e77380-b398-4737-9bee-15ab7bfaa883">
+      <ID>Id Date</ID>
+      <Name>Id Date</Name>
+      <DimensionID>Fact</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="25059efe-ec1b-4946-8adb-e81667a03371">
+          <AttributeID>Invoice ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="010ab981-f7d4-468d-b907-6d6f221c753d">
+          <AttributeID>Id Product SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b5f2f0d7-5981-429a-a174-d15c7c858fd7">
+          <AttributeID>Id Khach Hang SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5015130a-55de-41e9-8e78-adf76363d94d">
+          <AttributeID>Id City SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6b73d489-0a68-4888-95b5-b3f329ab139f">
+          <AttributeID>Id Gender NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="faae758f-7f55-4f4d-9b16-ab5721a93653">
+          <AttributeID>Id Date NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cc99ddbe-b7bf-4186-bfb3-34e6a0e1086b">
+          <AttributeID>Id Payment NK</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="e5c018ce-b6a3-4f76-a7e6-cb4a295127bb">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="af310e29-074e-424a-a726-168f16ff3ffd">
+      <ID>Id Payment</ID>
+      <Name>Id Payment</Name>
+      <DimensionID>Fact</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b19423ed-b4ac-4341-bfea-ebacf06a3d90">
+          <AttributeID>Invoice ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a79f8f29-7bdb-48fa-99fb-d8631fbac34b">
+          <AttributeID>Id Product SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fe7cfdae-78c6-45e8-b2e3-e0fd22de6871">
+          <AttributeID>Id Khach Hang SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ef9d16f2-b2b5-43c0-b674-55c99a2d88cf">
+          <AttributeID>Id City SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="895798ff-88cb-4cea-9512-943328017c26">
+          <AttributeID>Id Gender NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3977b73-1016-4939-8614-fc81b97e4ae1">
+          <AttributeID>Id Date NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7edd92a-80be-4ec5-8755-761f75c67445">
+          <AttributeID>Id Payment NK</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="3bbb6b58-b016-4072-b457-d1b21da4566f">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="aee0abcb-f485-42cd-97b3-2f9aa7c390f1">
+      <ID>Fact</ID>
+      <Name>Fact</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2dd986d7-2900-47f8-ba48-9a82bfc194bd">
+          <ID>Rating</ID>
+          <Name>Rating</Name>
+          <Source dwd:design-time-name="2795052b-dcde-485b-acb8-504ba9b50627">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5803b535-50c7-4af8-85a8-69a815011f43">
+              <TableID>dbo_Fact</TableID>
+              <ColumnID>Rating</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a0f04abe-ff1a-4ad7-a4b0-f09e8565037d">
+          <ID>Gross Income</ID>
+          <Name>Gross Income</Name>
+          <Source dwd:design-time-name="f95548d8-8a64-4524-a61b-84cd97f6ba50">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4f25fb7d-917d-41ad-a9a3-be401f002742">
+              <TableID>dbo_Fact</TableID>
+              <ColumnID>grossIncome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7ee83c77-9907-4903-8cab-9ffb9105f04b">
+          <ID>Fact Count</ID>
+          <Name>Fact Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="65e869c1-7d03-41e0-a2e9-f79ff29970f8">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="e98970b8-c6c9-4433-ba56-e57d60e07607">
+              <TableID>dbo_Fact</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b98b8bfc-2e4d-446d-ac9c-2a66e93686f7">
+          <CubeDimensionID>Fact</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="30a39765-30ae-4445-935b-51670e24933a">
+              <AttributeID>Invoice ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="eb64023e-4f2e-41c3-8296-3e4d071c07c6">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6b143452-4244-4e86-9e68-d93c34f1379d">
+                    <TableID>dbo_Fact</TableID>
+                    <ColumnID>InvoiceID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b7e0e93c-7cc1-43b1-a9f7-4ed5aa9aa12c">
+          <CubeDimensionID>Id Khach Hang</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="956f913b-216b-4e29-ae8c-e47a1876966c">
+              <AttributeID>Invoice ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0d19fc2f-b3ee-49af-87dd-e4d634a99f29">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8675245a-f75c-4084-830f-cf8f8ebda308">
+                    <TableID>dbo_Fact</TableID>
+                    <ColumnID>InvoiceID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="699298c6-a1cc-425b-8a15-03a7daffdbf4">
+          <CubeDimensionID>Id Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e1e705a4-129b-4cab-93fb-088948679cb7">
+              <AttributeID>Invoice ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a5e0d2f3-5932-432f-844f-b9cd27914fee">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="88732f24-4f5c-44eb-95d9-c038dc6b1059">
+                    <TableID>dbo_Fact</TableID>
+                    <ColumnID>InvoiceID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="6fd7a4ba-e7b3-4b9b-bf82-df6d31d4b7f2">
+          <CubeDimensionID>Id Payment</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1c326fe6-bfc4-4c27-b9c2-2f16ed09a6bd">
+              <AttributeID>Invoice ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="75d707f3-fb98-4ffc-b2aa-1e37367b6338">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="32929866-77fa-4856-bc4f-6d1e7417b97e">
+                    <TableID>dbo_Fact</TableID>
+                    <ColumnID>InvoiceID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="96ee6cde-0ca3-42e0-9e15-cc6184a7bb52">
+    <DataSourceViewID>DDS</DataSourceViewID>
+  </Source>
+</Cube>

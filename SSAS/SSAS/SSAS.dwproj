@@ -6,6 +6,18 @@
     <Name>SSAS.database</Name>
     <FullPath>SSAS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>DDS.cube</Name>
+      <FullPath>DDS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>DDS.partitions</Name>
+          <FullPath>DDS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Fact.dim</Name>
@@ -16,20 +28,8 @@
       <FullPath>Khach Hang DIM.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Product DIM.dim</Name>
-      <FullPath>Product DIM.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>City DIM.dim</Name>
-      <FullPath>City DIM.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>City DIM 1.dim</Name>
-      <FullPath>City DIM 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Product DIM 1.dim</Name>
-      <FullPath>Product DIM 1.dim</FullPath>
+      <Name>Invoice DIM.dim</Name>
+      <FullPath>Invoice DIM.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

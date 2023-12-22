@@ -19,46 +19,13 @@
         <ID>Khach Hang DIM</ID>
       </Dimension>
       <Dimension>
-        <ID>Product DIM</ID>
-      </Dimension>
-      <Dimension>
-        <ID>City DIM</ID>
-      </Dimension>
-      <Dimension>
-        <ID>City DIM 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Product DIM 1</ID>
+        <ID>Invoice DIM</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
         <ID>DDS</ID>
         <MeasureGroups>
-          <MeasureGroup>
-            <ID>City DIM</ID>
-            <Partitions>
-              <Partition>
-                <ID>City DIM</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Khach Hang DIM</ID>
-            <Partitions>
-              <Partition>
-                <ID>Khach Hang DIM</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Product DIM</ID>
-            <Partitions>
-              <Partition>
-                <ID>Product DIM</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
           <MeasureGroup>
             <ID>Fact</ID>
             <Partitions>

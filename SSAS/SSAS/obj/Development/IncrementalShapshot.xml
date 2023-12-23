@@ -26,35 +26,70 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>txX2NBzE9vo4dQVW3r5COY1YB5g=12/22/2023 11:27:44 PM12/22/2023 11:23:45 PM</TimeStamp>
+        <TimeStamp>RyXQ2OGgtveQqOcnmAEoCyY9f4k=12/23/2023 10:57:30 PM12/22/2023 11:23:45 PM</TimeStamp>
         <ID>
           <String>DDS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>W3j5+5ebDVl4P+JzzVzvwfFmSEA=12/22/2023 11:29:31 PM12/22/2023 11:28:16 PM</TimeStamp>
+        <TimeStamp>hBMOPhbTZzAStEM0fgbGItyFemk=12/23/2023 10:58:52 PM12/23/2023 10:58:52 PM</TimeStamp>
         <ID>
-          <String>Fact</String>
+          <String>City DIM</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>X+av0byA4CntgmwHCxDfNmQVqnk=12/22/2023 11:30:29 PM12/22/2023 11:28:41 PM</TimeStamp>
+        <TimeStamp>AOIzDelxEqB7wltjj1oQYXn0h+U=12/23/2023 10:59:01 PM12/23/2023 10:59:01 PM</TimeStamp>
+        <ID>
+          <String>Date DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>PE8KrM4tanGLgeEGQt90abP3wtg=12/23/2023 10:59:08 PM12/23/2023 10:59:08 PM</TimeStamp>
+        <ID>
+          <String>Gender DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>esqvwbaLtHJ8byGoBAphlb29BbM=12/23/2023 10:59:22 PM12/23/2023 10:59:22 PM</TimeStamp>
+        <ID>
+          <String>Invoice DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>uW5pmG2Vr/qaXA4bcZlPuERzmzY=12/23/2023 10:59:36 PM12/23/2023 10:59:36 PM</TimeStamp>
         <ID>
           <String>Khach Hang DIM</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ukASRHwXZEazXWQhqCGQ5YuqFtM=12/22/2023 11:30:29 PM12/22/2023 11:28:59 PM</TimeStamp>
+        <TimeStamp>1irWBN/D7wGweVCl4roi2vhFNoE=12/23/2023 10:59:45 PM12/23/2023 10:59:45 PM</TimeStamp>
         <ID>
-          <String>Invoice DIM</String>
+          <String>Payment DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5kvCW63bjmEZnyfrjQZI5or976s=12/23/2023 10:59:51 PM12/23/2023 10:59:51 PM</TimeStamp>
+        <ID>
+          <String>Product DIM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>o5oIwbJth5vh4DYbsiAG/77Qtn4=12/23/2023 11:00:34 PM12/23/2023 11:00:34 PM</TimeStamp>
+        <ID>
+          <String>Fact</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>Ww1dk6SJ2shU5YZSGfq9D9zsjJU=12/22/2023 11:30:44 PM12/22/2023 11:30:44 PMQSRVI2ITH1pDC47AaNyQEy4ihg0=12/22/2023 11:30:44 PM12/22/2023 11:30:44 PM</TimeStamp>
+        <TimeStamp>SqkDHIP93gT30eB1jSwLO1iLLXI=12/23/2023 11:00:47 PM12/23/2023 11:00:47 PMGQpgPvdRuTZJQlf3OVz5lj5vlnA=12/23/2023 11:00:47 PM12/23/2023 11:00:47 PM</TimeStamp>
         <ID>
           <String>DDS</String>
         </ID>
@@ -71,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2023-12-22T16:30:53.33Z</LastDeployed>
+  <LastDeployed>2023-12-23T16:00:55.543333Z</LastDeployed>
 </DeploymentSnapshot>

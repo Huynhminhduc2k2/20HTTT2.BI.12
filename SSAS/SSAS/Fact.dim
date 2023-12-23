@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2ed8f9ad-0b40-413d-90da-4bfa27d2feb8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="69deba49-336c-44d7-b288-c49c6d9b6c07" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Fact</ID>
   <Name>Fact</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,190 +6,6 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
-      <Value>
-        <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="13" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1117" scrolltop="4743" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="10689" y="10181" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
-            <font>
-              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
-            </font>
-            <mouseicon>
-              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
-            </mouseicon>
-          </diagram>
-          <layoutmanager>
-            <ddsxmlobj />
-          </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="khachHang_DIM" left="2554" top="18241" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3450" height="3387" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e00007a0d00003b0d0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_khachHang_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="city_DIM" left="2779" top="24028" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00006b0a0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_city_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" left="20" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000d30b0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_product_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="payment_DIM" left="20" top="7027" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3239" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000a70c00006b0a0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_payment_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="date_DIM" left="5539" top="12094" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a30e0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_date_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Fact" left="139" top="12094" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a30e0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_Fact" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="gender_DIM" left="8404" top="18781" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000003090000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_gender_DIM" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3880" top="21328" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobj>
-                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-              </ddsxmlobj>
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[khachHang_DIM-city_DIM]" vartype="8" />
-                <property name="Virtual" value="0" vartype="11" />
-                <property name="VisibleAP" value="0" vartype="3" />
-              </ddsxmlobj>
-            </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="4279" y="24028" />
-              <point x="4279" y="21628" />
-            </connector>
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="5704" top="19535" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobj>
-                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-              </ddsxmlobj>
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[khachHang_DIM-gender_DIM]" vartype="8" />
-                <property name="Virtual" value="0" vartype="11" />
-                <property name="VisibleAP" value="0" vartype="3" />
-              </ddsxmlobj>
-            </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="12" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="8404" y="19934" />
-              <point x="6004" y="19934" />
-            </connector>
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1339" top="15541" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3340" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobj>
-                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-              </ddsxmlobj>
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Fact-khachHang_DIM]" vartype="8" />
-                <property name="Virtual" value="0" vartype="11" />
-                <property name="VisibleAP" value="0" vartype="3" />
-              </ddsxmlobj>
-            </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="4279" y="18241" />
-              <point x="4279" y="17041" />
-              <point x="1639" y="17041" />
-              <point x="1639" y="15841" />
-            </connector>
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1240" top="9195" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobj>
-                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-              </ddsxmlobj>
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Fact-payment_DIM]" vartype="8" />
-                <property name="Virtual" value="0" vartype="11" />
-                <property name="VisibleAP" value="0" vartype="3" />
-              </ddsxmlobj>
-            </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="6" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="1639" y="9694" />
-              <point x="1639" y="12094" />
-            </connector>
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2839" top="13568" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobj>
-                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-              </ddsxmlobj>
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Fact-date_DIM]" vartype="8" />
-                <property name="Virtual" value="0" vartype="11" />
-                <property name="VisibleAP" value="0" vartype="3" />
-              </ddsxmlobj>
-            </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="6" sourceattachpoint="16" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="5539" y="13967" />
-              <point x="3139" y="13967" />
-            </connector>
-          </ddscontrol>
-        </dds>
-      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -205,15 +21,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-1117</Value>
+      <Value>0</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>4743</Value>
+      <Value>0</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>20</Value>
+      <Value>0</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -221,101 +37,62 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-      <Value>75</Value>
-    </Annotation>
-    <Annotation>
-      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
-      <Value>
-        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
-          <Shapes NodeWidth="159">
-            <Shape Id="Invoice ID" Expanded="false">
-              <Attributes>
-                <Attribute Id="Invoice ID" />
-              </Attributes>
-              <Position x="20" y="20" />
-            </Shape>
-            <Shape Id="Id Payment NK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id Payment NK" />
-              </Attributes>
-              <Position x="223" y="20" />
-            </Shape>
-            <Shape Id="Id Date NK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id Date NK" />
-              </Attributes>
-              <Position x="223" y="69" />
-            </Shape>
-            <Shape Id="Id Khach Hang SK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id Khach Hang SK" />
-              </Attributes>
-              <Position x="223" y="118" />
-            </Shape>
-            <Shape Id="Id Gender NK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id Gender NK" />
-              </Attributes>
-              <Position x="427" y="118" />
-            </Shape>
-            <Shape Id="Id City SK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id City SK" />
-              </Attributes>
-              <Position x="427" y="167" />
-            </Shape>
-            <Shape Id="Id Product SK" Expanded="false">
-              <Attributes>
-                <Attribute Id="Id Product SK" />
-              </Attributes>
-              <Position x="223" y="216" />
-            </Shape>
-          </Shapes>
-        </DiagramLayout>
-      </Value>
+      <Value>100</Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bddf4d33-f083-44d4-8fa0-6e087dcd3154">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f145b738-a013-4504-8a87-9c75958b5e1c">
     <DataSourceViewID>DDS</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="46ec5412-89fe-4c67-a095-805f62808d4b">
+  <ErrorConfiguration dwd:design-time-name="67256c0c-8e63-4f31-8af5-41fe2c08ea70">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="e16addc7-2925-423d-943d-74ead04aff5f">
+    <Attribute dwd:design-time-name="dc2304d1-689e-469d-a590-e0f5f7613a20">
       <ID>Invoice ID</ID>
       <Name>Invoice ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4f1deeb8-9f24-4bbf-b7d6-86543556fea5">
+        <KeyColumn dwd:design-time-name="2e4526d3-c43d-4bb1-867a-f8a952f8f288">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="506edc20-b5fe-47a1-a7d1-f0dc5a6d30e2">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="65d2a58b-715f-4197-a4f9-8cf4918b1104">
             <TableID>dbo_Fact</TableID>
             <ColumnID>InvoiceID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="22d14763-023f-48b2-bb60-e266b274bfce">
+        <AttributeRelationship dwd:design-time-name="8d68f3fd-d2fb-471b-a7ff-a1ee27520422">
+          <AttributeID>Rating</AttributeID>
+          <Name>Rating</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="07bf3cee-9890-46ba-92d5-4b60f0f9eab7">
+          <AttributeID>Gross Income</AttributeID>
+          <Name>Gross Income</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="aaa9638a-ac52-4f38-a593-39b17b6f349a">
+          <AttributeID>Id Invoice SK</AttributeID>
+          <Name>Id Invoice SK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6d43b9d4-5682-48af-a413-1f14eea5dc51">
           <AttributeID>Id Product SK</AttributeID>
           <Name>Id Product SK</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="93fdb7dc-05c8-433b-9314-7ddbd2c59f76">
+        <AttributeRelationship dwd:design-time-name="aa8d1fcd-9696-44ed-b941-17945350c282">
           <AttributeID>Id Khach Hang SK</AttributeID>
           <Name>Id Khach Hang SK</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="bac88ee6-3867-4d31-a7f2-9c9a28a180ee">
+        <AttributeRelationship dwd:design-time-name="06e833cb-22a5-47f9-abba-6c5f7303ee5b">
           <AttributeID>Id Date NK</AttributeID>
           <Name>Id Date NK</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="6639368b-92a2-445d-bf9f-9009eeab1ace">
+        <AttributeRelationship dwd:design-time-name="4ddeb54b-d36f-4a9c-9c24-221ad6b5eaf4">
           <AttributeID>Id Payment NK</AttributeID>
           <Name>Id Payment NK</Name>
         </AttributeRelationship>
@@ -324,16 +101,15 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d18a9a83-3b32-4dc0-99d0-0f279e4cd277">
-      <ID>Id Product SK</ID>
-      <Name>Id Product SK</Name>
+    <Attribute dwd:design-time-name="05b21bd6-78d0-46ae-be8b-abd1bbc60d24">
+      <ID>Rating</ID>
+      <Name>Rating</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9b2844e2-4422-4dee-adfe-062d2fc326b0">
-          <DataType>Integer</DataType>
-          <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="cc79d0ba-243b-488c-9f2e-7e6ae95c63da">
-            <TableID>dbo_product_DIM</TableID>
-            <ColumnID>idProduct_SK</ColumnID>
+        <KeyColumn dwd:design-time-name="59486301-e1dc-4d82-bf21-20fed90b92b4">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8f49a6ae-84c3-446f-8f57-b2aa0ef3688b">
+            <TableID>dbo_Fact</TableID>
+            <ColumnID>Rating</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
@@ -341,25 +117,121 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="9180752f-e266-4fce-a36f-e2f67b195fb3">
+    <Attribute dwd:design-time-name="0ce7f919-24be-48bd-af81-bbb53960d410">
+      <ID>Gross Income</ID>
+      <Name>Gross Income</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3999c496-6e88-423f-b9ad-fc3a24ee0e49">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="da9a7115-b9d8-418d-b509-d4c5b1eaf74a">
+            <TableID>dbo_Fact</TableID>
+            <ColumnID>grossIncome</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c54832c2-b7ea-4922-b474-35119e20d809">
+      <ID>Id Invoice SK</ID>
+      <Name>Id Invoice SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5d063b0a-8667-4279-b9a4-7e9abc7eaefe">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8f76310e-3205-4bfc-b7a6-f1d99436a13c">
+            <TableID>dbo_invoice_DIM</TableID>
+            <ColumnID>idInvoice_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b140f689-0e12-40f8-a2b0-551ce98e7c65">
+      <ID>Id Product SK</ID>
+      <Name>Id Product SK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f77d4213-11eb-4a6b-98ec-95bc266df30f">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e7842d37-42f4-4a0d-9732-719608527d56">
+            <TableID>dbo_product_DIM</TableID>
+            <ColumnID>idProduct_SK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="275323f4-426f-40f3-975b-16cd5c7e60fa">
+          <AttributeID>Quantity</AttributeID>
+          <Name>Quantity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="083df2b8-9200-4497-b51e-25bf5d8e3e81">
+          <AttributeID>Product Line</AttributeID>
+          <Name>Product Line</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b20394d-0a95-410e-a0a7-5a4c021a1855">
+      <ID>Quantity</ID>
+      <Name>Quantity</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a8d57eb-1594-4891-b49a-9a68e09ca2e2">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5eba63aa-88ac-4a28-b1b0-cfc27e5a0b1e">
+            <TableID>dbo_product_DIM</TableID>
+            <ColumnID>Quantity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ef7ec0d0-fe7d-44d3-8a94-067db5d0deab">
+      <ID>Product Line</ID>
+      <Name>Product Line</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0246c5d3-c036-4e28-8221-ac0bd499f382">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab543177-ace3-43a0-9676-2f133f5e167a">
+            <TableID>dbo_product_DIM</TableID>
+            <ColumnID>ProductLine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8ef63dd3-b38e-4a2d-a83a-4fcc67dd60a0">
       <ID>Id Khach Hang SK</ID>
       <Name>Id Khach Hang SK</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="226abff5-7552-465e-b9a9-983bf6b62045">
+        <KeyColumn dwd:design-time-name="a1db4511-b640-4bae-bf47-3a0a39ff8241">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="719debbe-8fa9-471e-8d50-51586c35284f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6fd29701-d436-41b2-a86c-6a3bf97681cc">
             <TableID>dbo_khachHang_DIM</TableID>
             <ColumnID>idKhachHang_SK</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="00afc8e1-f2f0-4d4e-b0c9-a52a98118745">
+        <AttributeRelationship dwd:design-time-name="3199f5cb-cc4e-441f-b574-3007ada3d230">
+          <AttributeID>Customer Type</AttributeID>
+          <Name>Customer Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="de9647fd-a1b5-4e26-b318-b4627343b562">
           <AttributeID>Id City SK</AttributeID>
           <Name>Id City SK</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="867dde73-463b-4a43-a190-afdb6bfae03a">
+        <AttributeRelationship dwd:design-time-name="e398af32-3300-40ff-8189-a806bd0e01cf">
           <AttributeID>Id Gender NK</AttributeID>
           <Name>Id Gender NK</Name>
         </AttributeRelationship>
@@ -368,52 +240,118 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="53b725da-7c5d-4f58-90dd-9d7bbf3cd343">
+    <Attribute dwd:design-time-name="e03cd78e-6161-4a46-9dcc-73a2d3f4d4e1">
+      <ID>Customer Type</ID>
+      <Name>Customer Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d8927f9f-ed7c-4a9b-931c-1278a5c8caae">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="38b7ffea-3a3a-4ee9-8b6b-8bcf990c9da6">
+            <TableID>dbo_khachHang_DIM</TableID>
+            <ColumnID>CustomerType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="907400c7-de25-4960-8fb0-d568ccc95e73">
       <ID>Id City SK</ID>
       <Name>Id City SK</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2eb8d778-4aac-4e45-baa5-94f70da7e95b">
+        <KeyColumn dwd:design-time-name="246f5579-0fe7-40b8-bc93-279d7cd6e481">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8552f87-1394-46ec-b8fb-a136cc7df18d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a106e70c-bda5-403d-be45-6d3de27495cb">
             <TableID>dbo_city_DIM</TableID>
             <ColumnID>idCity_SK</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ef64dacc-f3bd-4012-874a-b75f3e12b3e3">
+          <AttributeID>Id City NK</AttributeID>
+          <Name>Id City NK</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d8180256-f1ec-4b70-86f2-ac1e34ca754c">
+          <AttributeID>City</AttributeID>
+          <Name>City</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="a606e10b-80b9-452d-ab8c-2b82968973c4">
+    <Attribute dwd:design-time-name="860870b1-a1d2-4f9d-bfef-6f698d62f298">
+      <ID>Id City NK</ID>
+      <Name>Id City NK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="50fe3381-2056-4f9a-a3d5-85c50037a4f5">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1d43d9b3-05be-455f-87b2-174559694426">
+            <TableID>dbo_city_DIM</TableID>
+            <ColumnID>idCity_NK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ffa519af-8725-4afa-b17d-e555209ce6e1">
+      <ID>City</ID>
+      <Name>City</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83dc3851-7b37-41e8-8af0-dced28c52784">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="390f9b1f-21b1-469c-aaa4-09bb4f2d7728">
+            <TableID>dbo_city_DIM</TableID>
+            <ColumnID>city</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c095546f-8cb3-4f9b-9971-566cd7823435">
       <ID>Id Gender NK</ID>
       <Name>Id Gender NK</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="690549c0-6946-4289-8eaa-9157ce715b29">
+        <KeyColumn dwd:design-time-name="6108d8cb-e719-460c-b6da-225e6f61a7cb">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="aadaf599-e315-4b8f-985c-e8d841aa4fe0">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b84d2858-c2fb-40ec-820d-299bb0faff78">
             <TableID>dbo_gender_DIM</TableID>
             <ColumnID>idGender_NK</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5b1ef8b3-f6f3-4d8e-b947-0bc9bd73fef0">
+          <AttributeID>Gioi Tinh</AttributeID>
+          <Name>Gioi Tinh</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f67d2b95-53ba-478b-9237-091141e34553">
-      <ID>Id Date NK</ID>
-      <Name>Id Date NK</Name>
+    <Attribute dwd:design-time-name="351fde19-6b42-40c4-968f-bc57b0174fce">
+      <ID>Gioi Tinh</ID>
+      <Name>Gioi Tinh</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c2b0199e-b81a-4daa-9f96-3c0fcc51e830">
+        <KeyColumn dwd:design-time-name="d1ad2c59-e363-4232-83ec-6c9bb47541d9">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="73a9cddc-44c7-4ed5-ae62-6cef9f3d38f3">
-            <TableID>dbo_date_DIM</TableID>
-            <ColumnID>idDate_NK</ColumnID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="af8851c1-4f86-4aa5-b503-cfd1d4053767">
+            <TableID>dbo_gender_DIM</TableID>
+            <ColumnID>GioiTinh</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
@@ -421,17 +359,144 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="8d4c5bb4-f9f0-4653-8e49-87262a51d949">
-      <ID>Id Payment NK</ID>
-      <Name>Id Payment NK</Name>
+    <Attribute dwd:design-time-name="c526b12e-c784-485f-987b-be622e37c95d">
+      <ID>Id Date NK</ID>
+      <Name>Id Date NK</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6c01a1a3-4771-4b6d-b354-11617e058a94">
+        <KeyColumn dwd:design-time-name="a79dc337-de11-4488-b085-fcd7e3f9645c">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="22071ffd-2b79-4a44-8a1a-8ebf3056dd18">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ccda381c-e00e-4c49-867d-62d4f3658808">
+            <TableID>dbo_date_DIM</TableID>
+            <ColumnID>idDate_NK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="148903fd-d307-4fcb-8bf6-89cac5929abd">
+          <AttributeID>Day</AttributeID>
+          <Name>Day</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dae10f9a-ad4a-499d-9e0e-6a737a6bfc85">
+          <AttributeID>Month</AttributeID>
+          <Name>Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="af044d0a-71b6-4e05-8d96-f0dd9f0610f4">
+          <AttributeID>Year</AttributeID>
+          <Name>Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="75560a8e-fc4d-47c4-a3ea-9f04a65171fe">
+          <AttributeID>Time</AttributeID>
+          <Name>Time</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d2a6b819-e052-4dbd-b9df-901c22da9da1">
+      <ID>Day</ID>
+      <Name>Day</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="333cadd4-88a6-4bde-b696-4eb944862a7c">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b52e4a5-e907-45df-881b-808df65f9f3a">
+            <TableID>dbo_date_DIM</TableID>
+            <ColumnID>day</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a97d2226-0699-4fcf-a86f-94ce560c6ca8">
+      <ID>Month</ID>
+      <Name>Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="702c352a-da4e-43a0-a827-3dd6bdc3d7b1">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="194964b6-d075-4029-851e-11d20eb7211f">
+            <TableID>dbo_date_DIM</TableID>
+            <ColumnID>month</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8debaa30-0a28-4c9f-bd19-2c5392b81dbc">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="72c4392b-9661-4ddb-9106-d0dd2bd3c7f2">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bdc3868a-d259-4dd2-9a82-2b53b8e280fc">
+            <TableID>dbo_date_DIM</TableID>
+            <ColumnID>year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="39028861-b21c-487c-805c-59bbe3b418f0">
+      <ID>Time</ID>
+      <Name>Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7d6e3c95-6ab0-4f77-8194-924370574e17">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="58e94546-694d-4283-8d0f-5c18d7cf1965">
+            <TableID>dbo_date_DIM</TableID>
+            <ColumnID>time</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d8802616-194e-436e-aead-6742468bf7e6">
+      <ID>Id Payment NK</ID>
+      <Name>Id Payment NK</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ac9ba943-f941-414b-9fb9-313567a9fa65">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="77877939-5171-4f8d-b350-52333b31d052">
             <TableID>dbo_payment_DIM</TableID>
             <ColumnID>idPayment_NK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="14626046-e922-4705-aa42-3ceab14a96ee">
+          <AttributeID>Payment Method</AttributeID>
+          <Name>Payment Method</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="66f6e8fd-3772-4d20-bfcb-f2610b14021e">
+      <ID>Payment Method</ID>
+      <Name>Payment Method</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f263e86f-1e38-4a19-b36c-050b2a1915da">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bbdb25f3-2330-41db-a0c3-3b62c9f0ee7b">
+            <TableID>dbo_payment_DIM</TableID>
+            <ColumnID>PaymentMethod</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
@@ -440,43 +505,5 @@
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
   </Attributes>
-  <Hierarchies>
-    <Hierarchy dwd:design-time-name="191e141c-54bb-45b9-a91d-66aab7d3709a">
-      <ID>Hierarchy</ID>
-      <Name>Hierarchy</Name>
-      <Levels>
-        <Level dwd:design-time-name="923d11ef-c369-4bee-ac5f-6e86ecc6f90f">
-          <ID>Id City SK</ID>
-          <Name>Id City SK</Name>
-          <SourceAttributeID>Id City SK</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="9b6f2115-29e1-4d42-82a9-e4d9f63b5804">
-          <ID>Id Date NK</ID>
-          <Name>Id Date NK</Name>
-          <SourceAttributeID>Id Date NK</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="499ba4d7-a421-4700-b83e-b12bb3e76b14">
-          <ID>Id Gender NK</ID>
-          <Name>Id Gender NK</Name>
-          <SourceAttributeID>Id Gender NK</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="abf7ec23-61ae-46a4-8716-ebe268e93b0d">
-          <ID>Id Khach Hang SK</ID>
-          <Name>Id Khach Hang SK</Name>
-          <SourceAttributeID>Id Khach Hang SK</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="65aba9e6-feb3-4ef6-9e35-b7392bf52cdf">
-          <ID>Id Payment NK</ID>
-          <Name>Id Payment NK</Name>
-          <SourceAttributeID>Id Payment NK</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="be0817bd-bf5a-4377-b1b2-7e1dd5c3f017">
-          <ID>Id Product SK</ID>
-          <Name>Id Product SK</Name>
-          <SourceAttributeID>Id Product SK</SourceAttributeID>
-        </Level>
-      </Levels>
-    </Hierarchy>
-  </Hierarchies>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

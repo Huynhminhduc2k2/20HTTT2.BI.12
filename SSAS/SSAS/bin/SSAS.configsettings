@@ -13,13 +13,28 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Fact</ID>
+        <ID>City DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Date DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Gender DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Invoice DIM</ID>
       </Dimension>
       <Dimension>
         <ID>Khach Hang DIM</ID>
       </Dimension>
       <Dimension>
-        <ID>Invoice DIM</ID>
+        <ID>Payment DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Product DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Fact</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

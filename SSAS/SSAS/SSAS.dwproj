@@ -20,16 +20,36 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Fact.dim</Name>
-      <FullPath>Fact.dim</FullPath>
+      <Name>City DIM.dim</Name>
+      <FullPath>City DIM.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Date DIM.dim</Name>
+      <FullPath>Date DIM.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Gender DIM.dim</Name>
+      <FullPath>Gender DIM.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Invoice DIM.dim</Name>
+      <FullPath>Invoice DIM.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Khach Hang DIM.dim</Name>
       <FullPath>Khach Hang DIM.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Invoice DIM.dim</Name>
-      <FullPath>Invoice DIM.dim</FullPath>
+      <Name>Payment DIM.dim</Name>
+      <FullPath>Payment DIM.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product DIM.dim</Name>
+      <FullPath>Product DIM.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact.dim</Name>
+      <FullPath>Fact.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

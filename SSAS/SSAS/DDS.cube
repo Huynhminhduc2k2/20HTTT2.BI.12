@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="15b746f7-5f6b-454e-97d9-7c25609be17e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5eb1eca0-8e1e-4890-8701-e6a5d64f55f1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>DDS</ID>
   <Name>DDS</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -43,141 +43,235 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="2e912923-963b-46c0-9d97-8a45ae877a16">
+    <Dimension dwd:design-time-name="331d19e8-3c3f-4fd6-a936-ace6a9e7d94c">
       <ID>Fact</ID>
       <Name>Fact</Name>
       <DimensionID>Fact</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="4419f6c6-ae22-46bc-a821-17da26011f32">
+        <Attribute dwd:design-time-name="9df75219-b1a2-49ff-a018-fc459bcb4c63">
           <AttributeID>Invoice ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ee59a674-8357-4891-b711-3f795982b065">
+        <Attribute dwd:design-time-name="e6d6b84f-4f60-4cde-812a-afc9ec5a60d4">
+          <AttributeID>Rating</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f1ad8693-2059-4d1b-8a48-9c1bbcdf8809">
+          <AttributeID>Gross Income</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2b492612-7e23-4796-b70f-cf361d97da6b">
+          <AttributeID>Id Invoice SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="925aacbe-b452-4dad-a246-f4414e7b7e47">
           <AttributeID>Id Product SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4d881026-cf0c-42c9-a051-7f34a77ffec1">
+        <Attribute dwd:design-time-name="8b176ad4-62d1-4167-bbb1-006ff6ba2a41">
+          <AttributeID>Quantity</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bbeff9e3-ee7c-4d87-bcaa-3b942b962a0d">
+          <AttributeID>Product Line</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="85d2e8de-f528-43fa-b74d-4d5d9e3aa6a1">
           <AttributeID>Id Khach Hang SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5de91a52-29da-489e-8413-5ebb840a139b">
+        <Attribute dwd:design-time-name="82145cc3-d135-4ce2-9910-d00159a8cbf7">
+          <AttributeID>Customer Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a82bf635-f40e-46dd-b4ca-d61ade11ddb0">
           <AttributeID>Id City SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9f4dfaa6-ca05-445a-a951-737592030b7e">
+        <Attribute dwd:design-time-name="41f7dd86-6d16-4753-acfe-f3d2c3ac9b2d">
+          <AttributeID>Id City NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9cda3153-ec00-4212-b3aa-d83de11c8524">
+          <AttributeID>City</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5d7b5587-027b-4150-a405-1ade85135370">
           <AttributeID>Id Gender NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8f246455-cd4d-4cbd-8000-6e58cd682f8e">
+        <Attribute dwd:design-time-name="624e46c4-faef-44fc-8a2f-dd07da48452e">
+          <AttributeID>Gioi Tinh</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1353a3b-6373-42ef-8b33-dae148be85dd">
           <AttributeID>Id Date NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="09e82527-5526-4e74-9dcd-e49878f84e14">
+        <Attribute dwd:design-time-name="8b2ff8f4-bfa0-4221-86ae-07eb345c84a6">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d1a1baef-5e5c-465e-84f0-5665893f98b4">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="02c0fdf9-c9e3-4b14-9c21-a34823ebf9db">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="66915824-3d19-4b42-b464-a9873807d7f2">
+          <AttributeID>Time</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="40fee497-e070-4fe8-9b74-4c2dc1df0438">
           <AttributeID>Id Payment NK</AttributeID>
         </Attribute>
-      </Attributes>
-      <Hierarchies>
-        <Hierarchy dwd:design-time-name="2a8d3c08-d1d7-4844-a070-251fe033ef1d">
-          <HierarchyID>Hierarchy</HierarchyID>
-        </Hierarchy>
-      </Hierarchies>
-    </Dimension>
-    <Dimension dwd:design-time-name="4e20e937-24ad-461a-9c9a-7027382aaa61">
-      <ID>Id Khach Hang</ID>
-      <Name>Id Khach Hang</Name>
-      <DimensionID>Fact</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="b64a71bb-6b86-432d-92c6-f622ee83076a">
-          <AttributeID>Invoice ID</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="d8a214e3-7af8-4c2a-9632-52311523c2df">
-          <AttributeID>Id Product SK</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="41b0882b-ec80-42be-ae0c-9890159d8fec">
-          <AttributeID>Id Khach Hang SK</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="b9f06cfe-338f-4146-86d7-9032a77b2cbe">
-          <AttributeID>Id City SK</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="ede3e174-a408-46ab-9f20-0b96907c5ca7">
-          <AttributeID>Id Gender NK</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="089e92f2-a277-49d4-a879-54103c6ea93f">
-          <AttributeID>Id Date NK</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="83ef5e3b-c7d9-4d2c-b4f4-9bf2fa8bde32">
-          <AttributeID>Id Payment NK</AttributeID>
+        <Attribute dwd:design-time-name="3617259d-af6a-4411-a70b-ce9d4cff8ed1">
+          <AttributeID>Payment Method</AttributeID>
         </Attribute>
       </Attributes>
-      <Hierarchies>
-        <Hierarchy dwd:design-time-name="485322b4-f1cd-47b0-b929-1ba009a74cb1">
-          <HierarchyID>Hierarchy</HierarchyID>
-        </Hierarchy>
-      </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="b5e77380-b398-4737-9bee-15ab7bfaa883">
+    <Dimension dwd:design-time-name="d2b55e32-115e-42eb-8ec3-07337da7d140">
       <ID>Id Date</ID>
       <Name>Id Date</Name>
       <DimensionID>Fact</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="25059efe-ec1b-4946-8adb-e81667a03371">
+        <Attribute dwd:design-time-name="d60d0b88-4798-493a-bc0f-db88a84c830d">
           <AttributeID>Invoice ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="010ab981-f7d4-468d-b907-6d6f221c753d">
+        <Attribute dwd:design-time-name="87d3f247-32e3-4982-b5a2-3371bec9053a">
+          <AttributeID>Rating</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5b2fc634-f481-41a9-ade5-c5032ea3b235">
+          <AttributeID>Gross Income</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="700d30fc-7811-4aef-bc4d-c10b0450c1cd">
+          <AttributeID>Id Invoice SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0f664dd7-2ca5-47be-b889-6518f879c3c6">
           <AttributeID>Id Product SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b5f2f0d7-5981-429a-a174-d15c7c858fd7">
+        <Attribute dwd:design-time-name="b664a3e0-0f1c-4770-bac9-e0ace4986bc1">
+          <AttributeID>Quantity</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4ab31c75-bc51-4079-b4a9-0084c50336c2">
+          <AttributeID>Product Line</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="210855fb-8557-40e6-9851-a126e294dc0a">
           <AttributeID>Id Khach Hang SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5015130a-55de-41e9-8e78-adf76363d94d">
+        <Attribute dwd:design-time-name="74edf107-39d7-4280-aedf-5f6a9c416608">
+          <AttributeID>Customer Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7122a40d-e8df-4442-9015-dc68efb47bc5">
           <AttributeID>Id City SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6b73d489-0a68-4888-95b5-b3f329ab139f">
+        <Attribute dwd:design-time-name="2d3187a9-74ef-4eb9-bb35-8e80aed84dee">
+          <AttributeID>Id City NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7096378d-12cf-4974-9d63-f4b537fc8257">
+          <AttributeID>City</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c400322b-ba9b-44f7-95b5-aca34cd3c0f3">
           <AttributeID>Id Gender NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="faae758f-7f55-4f4d-9b16-ab5721a93653">
+        <Attribute dwd:design-time-name="a4d375b9-57ad-4774-b08a-001fc6daac39">
+          <AttributeID>Gioi Tinh</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2c9a6573-59d9-44f3-be14-650793a6db10">
           <AttributeID>Id Date NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cc99ddbe-b7bf-4186-bfb3-34e6a0e1086b">
+        <Attribute dwd:design-time-name="cd85f8c0-4d6b-4214-ba69-44b02a057913">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="231aec3a-a103-4a34-8ccb-ed77a5794f07">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c4867df5-bff0-4122-99fa-9b494ea12c33">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0033d8b1-b8fe-43a7-9948-a32176224e35">
+          <AttributeID>Time</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3ce4711f-50d3-4f08-91d0-db1155fae46f">
           <AttributeID>Id Payment NK</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="cf957ac2-d550-4665-8c6a-e35501c892bc">
+          <AttributeID>Payment Method</AttributeID>
+        </Attribute>
       </Attributes>
-      <Hierarchies>
-        <Hierarchy dwd:design-time-name="e5c018ce-b6a3-4f76-a7e6-cb4a295127bb">
-          <HierarchyID>Hierarchy</HierarchyID>
-        </Hierarchy>
-      </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="af310e29-074e-424a-a726-168f16ff3ffd">
+    <Dimension dwd:design-time-name="87ba0089-7799-4977-9035-15f683e9182a">
       <ID>Id Payment</ID>
       <Name>Id Payment</Name>
       <DimensionID>Fact</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="b19423ed-b4ac-4341-bfea-ebacf06a3d90">
+        <Attribute dwd:design-time-name="0753961a-1788-42a8-ad5b-631832ab5b05">
           <AttributeID>Invoice ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a79f8f29-7bdb-48fa-99fb-d8631fbac34b">
+        <Attribute dwd:design-time-name="3906e242-fed5-4e3e-8498-fdc525a48833">
+          <AttributeID>Rating</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4c109210-cac6-43f4-b3a5-23358abc2a7f">
+          <AttributeID>Gross Income</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="86fba46c-ac3b-4d52-9630-cb02292b9cc3">
+          <AttributeID>Id Invoice SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="56570d11-fcec-41b0-8c32-f3992ef028eb">
           <AttributeID>Id Product SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fe7cfdae-78c6-45e8-b2e3-e0fd22de6871">
+        <Attribute dwd:design-time-name="9b7b751f-b7e6-4686-a342-007a067cfbfa">
+          <AttributeID>Quantity</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="20abd63a-6e10-4997-aebf-d29340006e6c">
+          <AttributeID>Product Line</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2bd4aab3-7059-4a07-a710-ed4f2a6bfa46">
           <AttributeID>Id Khach Hang SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ef9d16f2-b2b5-43c0-b674-55c99a2d88cf">
+        <Attribute dwd:design-time-name="e91a716b-5b2c-4274-85d3-027d7de95574">
+          <AttributeID>Customer Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="228909fd-9846-4c4a-8ef8-5876bcd87dd6">
           <AttributeID>Id City SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="895798ff-88cb-4cea-9512-943328017c26">
+        <Attribute dwd:design-time-name="d53375ba-3e21-45b6-98cb-19b7affa00a5">
+          <AttributeID>Id City NK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="229998e7-5010-4b74-8ed4-b97a3a9f3773">
+          <AttributeID>City</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5693c42d-b31e-4dce-8fb1-10ca564fcc25">
           <AttributeID>Id Gender NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a3977b73-1016-4939-8614-fc81b97e4ae1">
+        <Attribute dwd:design-time-name="a332f2f0-4a23-4bd8-bc62-8dbf0b904d6a">
+          <AttributeID>Gioi Tinh</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bc55ad72-5b8e-4fb1-9d45-7807c2e43f8d">
           <AttributeID>Id Date NK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b7edd92a-80be-4ec5-8755-761f75c67445">
+        <Attribute dwd:design-time-name="d5566784-f0b7-4cea-9835-20363276805c">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c19f941d-a282-40ab-b1be-210481af56e6">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2dc7c201-ef28-4133-9f50-16e8585a7ac0">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6e0a125b-af4b-41cb-9a0a-d25bb517be52">
+          <AttributeID>Time</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4b02ab3e-3398-4a60-aac6-7e1ed61a15de">
           <AttributeID>Id Payment NK</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="9f9329b5-36b6-4ae8-bca7-47cc59a86c8b">
+          <AttributeID>Payment Method</AttributeID>
+        </Attribute>
       </Attributes>
-      <Hierarchies>
-        <Hierarchy dwd:design-time-name="3bbb6b58-b016-4072-b457-d1b21da4566f">
-          <HierarchyID>Hierarchy</HierarchyID>
-        </Hierarchy>
-      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="3cd55adc-977e-4cd8-b4bc-1accad855ecb">
+      <ID>Khach Hang DIM</ID>
+      <Name>Khach Hang DIM</Name>
+      <DimensionID>Khach Hang DIM</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d6ecb5eb-b817-456a-bd06-705e6ae7211b">
+          <AttributeID>Id Khach Hang SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d44e46b2-a5f9-43e4-826d-4fbeb49d515b">
+          <AttributeID>Id City SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c04b7b81-fd71-464b-a56b-ecba78fefded">
+          <AttributeID>Id Gender NK</AttributeID>
+        </Attribute>
+      </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="aee0abcb-f485-42cd-97b3-2f9aa7c390f1">
+    <MeasureGroup dwd:design-time-name="ab8ec5a7-0268-4172-8e0f-f0e2401f6bd6">
       <ID>Fact</ID>
       <Name>Fact</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -185,36 +279,36 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="2dd986d7-2900-47f8-ba48-9a82bfc194bd">
+        <Measure dwd:design-time-name="586de9c1-20bf-49d3-bb3e-cd3cd3724cf4">
           <ID>Rating</ID>
           <Name>Rating</Name>
-          <Source dwd:design-time-name="2795052b-dcde-485b-acb8-504ba9b50627">
+          <Source dwd:design-time-name="6d51f42d-22a8-4237-ba09-4f6c916331c4">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="5803b535-50c7-4af8-85a8-69a815011f43">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fd9c0955-4e95-4f40-89ff-9676f276c623">
               <TableID>dbo_Fact</TableID>
               <ColumnID>Rating</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="a0f04abe-ff1a-4ad7-a4b0-f09e8565037d">
+        <Measure dwd:design-time-name="519b066c-778c-43de-8cb8-3dad76e5d69e">
           <ID>Gross Income</ID>
           <Name>Gross Income</Name>
-          <Source dwd:design-time-name="f95548d8-8a64-4524-a61b-84cd97f6ba50">
+          <Source dwd:design-time-name="999e2377-b7cd-4417-ab0d-2e024ff5e230">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="4f25fb7d-917d-41ad-a9a3-be401f002742">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="194bfef9-c953-4d89-8d1b-bac67184c9dc">
               <TableID>dbo_Fact</TableID>
               <ColumnID>grossIncome</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="7ee83c77-9907-4903-8cab-9ffb9105f04b">
+        <Measure dwd:design-time-name="f63e5b9f-d4ac-4e4c-9a6c-e233c61e6a4f">
           <ID>Fact Count</ID>
           <Name>Fact Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="65e869c1-7d03-41e0-a2e9-f79ff29970f8">
+          <Source dwd:design-time-name="3ccdbfff-9271-4dbd-a65f-a17b723c4985">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="e98970b8-c6c9-4433-ba56-e57d60e07607">
+            <Source xsi:type="RowBinding" dwd:design-time-name="540f3f30-f747-4193-b671-78a01a594676">
               <TableID>dbo_Fact</TableID>
             </Source>
           </Source>
@@ -223,16 +317,16 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b98b8bfc-2e4d-446d-ac9c-2a66e93686f7">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="ce4083aa-b177-4fe7-8e41-d45fdd6f9098">
           <CubeDimensionID>Fact</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="30a39765-30ae-4445-935b-51670e24933a">
+            <Attribute dwd:design-time-name="e3bad03b-a09c-49d4-88e1-fbd701dfe979">
               <AttributeID>Invoice ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="eb64023e-4f2e-41c3-8296-3e4d071c07c6">
+                <KeyColumn dwd:design-time-name="288995ac-6878-4a38-bf01-04f299e8fbc2">
                   <DataType>WChar</DataType>
                   <DataSize>255</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6b143452-4244-4e86-9e68-d93c34f1379d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="adf6ab9b-26f6-4199-acb1-d461b468957d">
                     <TableID>dbo_Fact</TableID>
                     <ColumnID>InvoiceID</ColumnID>
                   </Source>
@@ -242,18 +336,18 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b7e0e93c-7cc1-43b1-a9f7-4ed5aa9aa12c">
-          <CubeDimensionID>Id Khach Hang</CubeDimensionID>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1f3dfca8-104a-4cd0-a1ba-e1b56a0f31fb">
+          <CubeDimensionID>Khach Hang DIM</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="956f913b-216b-4e29-ae8c-e47a1876966c">
-              <AttributeID>Invoice ID</AttributeID>
+            <Attribute dwd:design-time-name="f74d3e06-e0c7-454f-896c-fa16cdd284ab">
+              <AttributeID>Id Khach Hang SK</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0d19fc2f-b3ee-49af-87dd-e4d634a99f29">
-                  <DataType>WChar</DataType>
-                  <DataSize>255</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8675245a-f75c-4084-830f-cf8f8ebda308">
+                <KeyColumn dwd:design-time-name="34e02f14-043a-4b9e-99fa-0dfea085e30c">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cd51d07b-3922-4cd2-a965-6b3d9da2bdf2">
                     <TableID>dbo_Fact</TableID>
-                    <ColumnID>InvoiceID</ColumnID>
+                    <ColumnID>idKhachHang</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -261,16 +355,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="699298c6-a1cc-425b-8a15-03a7daffdbf4">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="c90d5b5b-f465-4ccb-86cb-13d3b3b4dad7">
           <CubeDimensionID>Id Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e1e705a4-129b-4cab-93fb-088948679cb7">
+            <Attribute dwd:design-time-name="a42ee114-6eac-4816-9dd6-60b5a472d6b7">
               <AttributeID>Invoice ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a5e0d2f3-5932-432f-844f-b9cd27914fee">
+                <KeyColumn dwd:design-time-name="c71d6421-8574-4316-9ba7-f47332d41364">
                   <DataType>WChar</DataType>
                   <DataSize>255</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="88732f24-4f5c-44eb-95d9-c038dc6b1059">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ec00c3ca-2903-4399-8765-fce58f79a918">
                     <TableID>dbo_Fact</TableID>
                     <ColumnID>InvoiceID</ColumnID>
                   </Source>
@@ -280,16 +374,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="6fd7a4ba-e7b3-4b9b-bf82-df6d31d4b7f2">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="49e33e04-ff30-4062-8cd3-ebd355ed89ee">
           <CubeDimensionID>Id Payment</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="1c326fe6-bfc4-4c27-b9c2-2f16ed09a6bd">
+            <Attribute dwd:design-time-name="119dcf59-6142-41c6-af31-044567a2d72e">
               <AttributeID>Invoice ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="75d707f3-fb98-4ffc-b2aa-1e37367b6338">
+                <KeyColumn dwd:design-time-name="3c8a94d7-3416-4843-87d7-c64621e57cbb">
                   <DataType>WChar</DataType>
                   <DataSize>255</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="32929866-77fa-4856-bc4f-6d1e7417b97e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e96f9d81-fea0-4e8a-ba21-e5940e8169b3">
                     <TableID>dbo_Fact</TableID>
                     <ColumnID>InvoiceID</ColumnID>
                   </Source>
@@ -303,7 +397,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="96ee6cde-0ca3-42e0-9e15-cc6184a7bb52">
+  <Source dwd:design-time-name="0bffca9c-b671-4253-8ed9-50ca172123a1">
     <DataSourceViewID>DDS</DataSourceViewID>
   </Source>
 </Cube>

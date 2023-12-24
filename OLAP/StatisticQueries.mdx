@@ -1,0 +1,19 @@
+﻿--Cau 1: Tình hình mua hàng của khách hàng theo từng chi nhánh - NHÂN
+ SELECT NON EMPTY { [Measures].[Rating] } ON COLUMNS,
+	NON EMPTY crossjoin ([Fact].[City].[City], [Fact].[Id Khach Hang SK].[Id Khach Hang SK], [Fact].[Customer Type].[Customer Type], [Fact].[Product Line].[Product Line], [Fact].[Quantity].[Quantity] ) ON ROWS
+ FROM [DDS]
+
+--Cau 2: Tình hình mua hàng của khách hàng từng loại sản phẩm - ĐỨC
+ SELECT NON EMPTY { [Measures].[Rating] } ON COLUMNS,
+	NON EMPTY crossjoin ([Fact].[Product Line].[Product Line], [Fact].[Id Khach Hang SK].[Id Khach Hang SK], [Fact].[Customer Type].[Customer Type], [Fact].[Quantity].[Quantity] ) ON ROWS
+ FROM [DDS]
+
+--Cau 3: Tình hình mua hàng của khách hàng theo thời gian - THÔNG
+ SELECT NON EMPTY { [Measures].[Rating] } ON COLUMNS, 
+	NON EMPTY crossjoin ([Fact].[Time].[Time], [Fact].[Year].[Year], [Fact].[Month].[Month], [Fact].[Day].[Day], [Fact].[Id Khach Hang SK].[Id Khach Hang SK], [Fact].[Customer Type].[Customer Type], [Fact].[Quantity].[Quantity] ) ON ROWS
+ FROM [DDS]
+
+--Cau 4: Tình hình mua hàng của khách hàng theo hình thức thanh toán - THIỆN
+ SELECT NON EMPTY { [Measures].[Rating] } ON COLUMNS,
+	NON EMPTY crossjoin ([Fact].[Payment Method].[Payment Method], [Fact].[Id Khach Hang SK].[Id Khach Hang SK], [Fact].[Customer Type].[Customer Type], [Fact].[Quantity].[Quantity] ) ON ROWS
+ FROM [DDS]

@@ -11,7 +11,9 @@
 
 - SSIS hỗ trợ đưa dữ liệu từ bất kỳ SOURCE vào STAGE để dễ dàng ETL (Extract-Transform-Load) cho từ n nguồn trở lên.
 - Điều này giúp cho dễ quản lý các dữ liệu với định dạng khác nhau từ nhiều nguồn.
+
 #### Quy tắc:
+
 - Add thêm 2 trường createdDate và updatedDate vào các bảng trong nguồn.
 - Cập nhật CET để có khoảng cách giữa LSET và CET để lấy dữ liệu thay đổi
 - Tạo data flow để cập nhật lại khoảng cách LSET, CET
@@ -20,7 +22,7 @@
 #### Bước 1 (Tạo DBs):
 
 - Tạo 2 database "STAGE" và "METADB" (xem file đính kèm trong InitialDB -> 1.CreateMETADB.sql)
-  
+
 #### Bước 2 (Nạp SOURCE vào STAGE):
 
 - Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: STAGE)
@@ -30,7 +32,9 @@
 ### STAGE - NDS
 
 - Ở giai đoạn này, dữ liệu bắt đầu được chuẩn hóa, làm sạch để nâng cao chất lượng dữ liệu và có các SK (SurrogateKey: khóa chính của từng bảng liên quan trong NDS), NK (NaturalKey: khóa chính của các bảng con) và sourceId (khóa nguồn: giúp xác định vị trí của các dữ liệu từ nguồn nào).
+
 #### Quy tắc:
+
 - Tạo các bảng NDS chứa các trường dữ liệu cần thêm để quản lý.
 - Tiến hành đẩy dữ liệu từ STAGE -> NDS
 - Dữ liệu nào chưa có trong các table_NDS thì insert vào, cái nào có rồi mà thay đổi thì update lại dữ liệu.
@@ -44,3 +48,24 @@
 - Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: NDS)
 - Chỉnh connection trong DATA FLOW và mapping các bảng
 - Chạy package "STAGE-NDS"
+
+### NDS - DDS
+
+- Ở giai đoạn này, dữ liệu bắt đầu được tạo thành các bảng DIM để query cho bảng FACT phục vụ cho OLAP (SSAS, MDX).
+
+#### Quy tắc:
+
+- Tạo các bảng DDS chứa các trường dữ liệu cần thêm để quản lý.
+- Tiến hành đẩy dữ liệu từ NDS -> DDS
+- Các dữ liệu sẽ được tham chiếu tới khóa của các bảng để xác định dòng dữ liệu thay vì tham chiếu khóa Natural Key (Khóa chính của bảng con).
+
+#### Bước 1 (Tạo DB DDS):
+
+- Tạo database "DDS" có các bảng rỗng tự khởi tạo (xem file đính kèm InitialDB -> 3.CreateDatabase_DDS.sql)
+
+#### Bước 2 (Nạp NDS vào DDS - Dimensional Data Store):
+
+- Tạo Connection Management (Microsoft OLE DB Provider for SQL Server) dẫn tới SQL SERVER NAME (DATABASE: DDS)
+- Tạo dataflow_NDS để cập nhật lại createdDate và updatedDate để biết dữ liệu được nạp vào DDS khi nào.
+- Chỉnh connection trong DATA FLOW và mapping các bảng
+- Chạy package "NDS-DDS"

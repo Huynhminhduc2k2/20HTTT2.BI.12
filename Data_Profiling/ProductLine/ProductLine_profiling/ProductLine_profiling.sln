@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ProductLine_profiling", "ProductLine_profiling\ProductLine_profiling.dtproj", "{7D39B554-3CCD-4027-9D51-7A06E4AA8F1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D39B554-3CCD-4027-9D51-7A06E4AA8F1F}.Development|Default.ActiveCfg = Development
+		{7D39B554-3CCD-4027-9D51-7A06E4AA8F1F}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {400237FB-B286-48C9-992E-B3B0674483D1}
+	EndGlobalSection
+EndGlobal

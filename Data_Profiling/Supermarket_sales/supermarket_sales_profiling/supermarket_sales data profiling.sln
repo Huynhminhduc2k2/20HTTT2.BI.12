@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "supermarket_sales data profiling", "supermarket_sales data profiling\supermarket_sales data profiling.dtproj", "{E395C0C8-F736-4F29-A92A-C2ECFE074396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E395C0C8-F736-4F29-A92A-C2ECFE074396}.Development|Default.ActiveCfg = Development
+		{E395C0C8-F736-4F29-A92A-C2ECFE074396}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48B99A80-7945-45BA-883E-E2146F1AD0FE}
+	EndGlobalSection
+EndGlobal

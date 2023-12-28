@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{5662DBE6-B4F8-4CA4-A0AC-8C19B1830954}" Name="Excel Connection Manager">
+      <DtsConnectionManagerID>Excel Connection Manager</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{8E355067-9E63-40ED-A94B-05842E7119DB}" Name="LAPTOP-EG3I3875.SUPERMARKET_SALES">
+      <DtsConnectionManagerID>LAPTOP-EG3I3875.SUPERMARKET_SALES</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{B753F361-4D95-4C27-8093-391BFD25ED0E}" Name="LAPTOP-EG3I3875.SUPERMARKET_SALES_STAGE">
+      <DtsConnectionManagerID>LAPTOP-EG3I3875.SUPERMARKET_SALES_STAGE</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{04416A55-B3A5-4485-8089-ABFD884B7B22}" Name="Product.xml">
+      <DtsConnectionManagerID>Product.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{6E12B6CD-4231-430F-B93D-D29B821B50C5}" Name="Product.xml 1">
+      <DtsConnectionManagerID>Product.xml 1</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table Schema="dbo" Table="Product_Stage" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table Schema="dbo" Table="product$" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES" Schema="dbo" Table="product$" RowCount="1016" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>73</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq1" IsExact="true">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES" Schema="dbo" Table="product$" RowCount="1016" />
+        <Column Name="Unit price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES" Schema="dbo" Table="product$" RowCount="1016" />
+        <Column Name="Unit price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.08</MinValue>
+        <MaxValue>99.96</MaxValue>
+        <Mean>55.6946456692914</Mean>
+        <StdDev>26.4412793267175</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq1" IsExact="true">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES" Schema="dbo" Table="product$" RowCount="1016" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>5</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>844</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>99</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq1">
+        <DataSourceID>{8E355067-9E63-40ED-A94B-05842E7119DB}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES" Schema="dbo" Table="product$" RowCount="1016" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>943</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES_STAGE" Schema="dbo" Table="Product_Stage" RowCount="3048" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>219</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES_STAGE" Schema="dbo" Table="Product_Stage" RowCount="3048" />
+        <Column Name="Unit price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES_STAGE" Schema="dbo" Table="Product_Stage" RowCount="3048" />
+        <Column Name="Unit price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10.08</MinValue>
+        <MaxValue>99.96</MaxValue>
+        <Mean>55.6946456692914</Mean>
+        <StdDev>26.4412793267176</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES_STAGE" Schema="dbo" Table="Product_Stage" RowCount="3048" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>5</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>2532</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>297</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{B753F361-4D95-4C27-8093-391BFD25ED0E}</DataSourceID>
+        <Table DataSource="LAPTOP-EG3I3875" Database="SUPERMARKET_SALES_STAGE" Schema="dbo" Table="Product_Stage" RowCount="3048" />
+        <Column Name="ProductID" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>943</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
